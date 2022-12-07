@@ -1,39 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.css">
-    <title>Price Check</title>
-    <link href="/static/css/main.9c9e2e78.css" rel="stylesheet">
+    <title>My Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        #starfield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .star {
+            fill: white;
+        }
+        
+        .star.small {
+            opacity: 0.2;
+        }
+        
+        .star.medium {
+            opacity: 0.5;
+        }
+        
+        .star.large {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="ui main-body text container">
-        <div class="ui segment">
-            <div class="ui center aligned container">
-                <h2 class="ui header">Welcome to Price Check</h2>
-                <div class="ui inverted black segment">
-                    <div id="price"></div>
-                </div>
-            </div>
-            <div class="ui segment">
-                <p>I made this as Github pages demo of:</p>
-                <ul>
-                    <li>Static content</li>
-                    <li>React apps</li>
-                    <li>Awesomness</li>
-                </ul>
-            </div>
-        </div>
-        <div class="ui center aligned footer container">
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.js"></script>
-    <script type="text/javascript" src="main.6f499e24.js"></script>
-</body>
+    <svg id="starfield"></svg>
+    <h1>Welcome to our website!</h1>
 
-</html>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        const starfield = d3
+            .select("#starfield")
+            .attr("width", width)

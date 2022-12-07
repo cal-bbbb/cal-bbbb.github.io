@@ -48,7 +48,8 @@
         // Create a new SVG element
         const svg = d3.select("body").append("svg")
             .attr("width", 500)
-            .attr("height", 500);
+            .attr("height", 500)
+            .style("background-color", "black");
 
         // Generate random x and y coordinates for the stars
         const data = d3.range(100).map(() => [Math.random() * 500, Math.random() * 500]);

@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <h1>Welcome to our website!</h1>
+    <h1>Welcome to my website!</h1>
 
     <svg id="starfield"></svg>
 
@@ -34,45 +34,17 @@
     <script>
         // Create a new SVG element
         const svg = d3.select("#starfield").append("svg")
-            .attr("width", 500)
+            .attr("width", )
             .attr("height", 500)
             .attr("preserveAspectRatio", "xMidYMid slice")
             .style("background-color", "black");
 
-        function begin() {
-            // Generate random x and y coordinates for the stars
-            const data = d3.range(100).map(() => [Math.random() * 500, Math.random() * 500]);
-
-            // Bind the data to the SVG element and create a circle for each data point
-            const stars = svg.selectAll("circle").data(data);
-            stars.enter().append("circle")
-                .attr("cx", d => d[0])
-                .attr("cy", d => d[1])
-                .attr("r", 2)
-                .attr("fill", "white");
-
-            expand();
-        }
-
-        function expand() {
-            d3.selectAll("circle")
-                .transition()
-                .duration(60000)
-                .ease(d3.easeLinear)
-                .attr("cx", function(d) {
-                    d[0] = (d[0] * 1.1) ^ 2;
-                    console.log(d[0]);
-                    return d[0];
-                })
-                .attr("cy", function(d) {
-                    d[1] = (d[1] * 1.1) ^ 2;
-                    console.log(d[1]);
-                    return d[1];
-                })
-                .on("end", begin());
-        }
-
-        begin();
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight || e.clientHeight || g.clientHeight;
     </script>
 </body>
 

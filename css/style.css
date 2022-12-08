@@ -3,7 +3,6 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     background-color: #201010;
 }
 
@@ -12,6 +11,7 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
     background-color: #201010;
     position: fixed;
 }
@@ -27,7 +27,7 @@ body {
     color: white;
     font-family: 'Monoton', cursive;
     font-size: 7em;
-    padding-left: 5px;
+    padding-left: 20px;
 }
 
 #body-wrapper h2 {
@@ -56,6 +56,9 @@ body {
     padding: 10px;
 }
 
+
+/* Icons */
+
 .fa {
     font-size: 30px;
     width: 50px;
@@ -73,6 +76,36 @@ body {
     transition: cubic-bezier(0.19, 1, 0.22, 1);
     transition-duration: 200ms;
     color: #EF9CDA;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #EF9CDA;
+    border-radius: 5px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E97CD3;
+    transition: background 2s ease-in;
 }
 
 @media only screen and (max-width: 600px) {

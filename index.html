@@ -27,6 +27,20 @@
     <link rel="stylesheet" href="new-layout/css/style.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      .maintenance-title {
+        padding-left: 36px;
+      }
+
+      @media (max-width: 960px) {
+        .maintenance-title {
+        margin: 50px 0 0 0;
+      }  
+      .social-icon-wrapper > a{
+        color: inherit;
+      } 
+        }
+    </style>
   </head>
 
   <body>
@@ -34,19 +48,24 @@
       <!-- Main Content -->
       <main class="content-container container-fluid" id="top">
         <div class="page-section">
-          <div class="" style="padding-left: 36px">
-            <h2>this site is currently under maintenance.<br /><span style="font-size: 18pt;">(it will be worth the wait&mdash;trust me)</span></h2>
+          <div class="maintenance-title">
+            <h2>
+              this site is currently under maintenance.<br /><span
+                style="font-size: 18pt"
+                >(it will be worth the wait&mdash;trust me)</span
+              >
+            </h2>
           </div>
         </div>
         <div class="page-section">
           <div class="page-section-title-wrapper container-fluid">
             <div class="name-title menu-item" style="text-align: right">
-                <h1
-                  class="page-section-title"
-                  style="font-size: 36pt; margin: -1px 0 0 -15px; color: black"
-                >
-                  CALUM<br />BOONE
-                </h1>
+              <h1
+                class="page-section-title landing-title"
+                style="font-size: 36pt; margin: -1px 0 0 -15px"
+              >
+                CALUM<br />BOONE
+              </h1>
             </div>
           </div>
           <div class="container-fluid main-content">
@@ -68,6 +87,39 @@
                     >linkedin.com/in/calum-boone/</a
                   ></span
                 >
+                <div
+                  class="social-wrapper"
+                  style="margin: 10px 0 0 7px; flex-direction: row"
+                >
+                  <div class="social-icon-wrapper menu-item" id="linkedin">
+                    <a
+                      href="https://www.linkedin.com/in/calum-boone/"
+                      target="_blank"
+                      class="fa fa-linkedin"
+                    ></a>
+                  </div>
+                  <div class="social-icon-wrapper dm-toggle menu-item" id="spotify">
+                    <a
+                      href="https://open.spotify.com/artist/6vexkAscGsLMnF12MjyIjK?si=Cv4MGb7RT2a-gFUlucfg2A"
+                      target="_blank"
+                      class="fa fa-spotify"
+                    ></a>
+                  </div>
+                  <div class="social-icon-wrapper dm-toggle menu-item" id="instagram">
+                    <a
+                      href="https://www.instagram.com/cal.bbbbbbbb/"
+                      target="_blank"
+                      class="fa fa-instagram"
+                    ></a>
+                  </div>
+                  <div class="social-icon-wrapper dm-toggle menu-item" id="twitter">
+                    <a
+                      href="https://twitter.com/CalumBoone"
+                      target="_blank"
+                      class="fa fa-twitter"
+                    ></a>
+                  </div>
+                </div>
               </div>
               <div class="col-lg-4">
                 <span class="body-text"
@@ -101,6 +153,7 @@
     ></script>
 
     <script src="https://d3js.org/d3.v7.min.js "></script>
+    <script src="new-layout/js/dm-toggle.js"></script>
     <script src="new-layout/js/resume-download.js"></script>
   </body>
 </html>

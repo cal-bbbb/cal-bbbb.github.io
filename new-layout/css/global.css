@@ -1,0 +1,237 @@
+:root {
+    --bg-white: #FCF5ED;
+    --main-color: rgb(255, 98, 0);
+    --alt-color: rgb(255, 0, 217);
+    --code: rgb(222, 15, 0);
+    --design: rgb(0, 63, 222);
+    --photo: #efca10;
+    --music: #8300ee;
+    --resume: rgb(33, 119, 2);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-white);
+}
+
+/* DARK MODE STYLES */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0a0500;
+        color: #fff;
+    }
+}
+
+body.dark {
+    background-color: #0a0500;
+    color: #fff;
+}
+
+h1 {
+    font-size: 48pt;
+    font-weight: 600;
+    line-height: 0.9;
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+.body-wrapper {
+    display: block;
+    min-height: 100vh;
+}
+
+.body-text, .body-text > * {
+    font-size: 9pt;
+    line-height: 12pt;
+    margin-bottom: 0;
+}
+
+.body-text a {
+    color: inherit;
+    transition: all 0.1s ease-in-out;
+}
+
+.body-text a:hover {
+    color: var(--main-color);
+}
+
+/* SCROLLBAR */
+/*scrollbar stuff */
+::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    border: 5px solid #fff;
+    transition: all 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #808085;
+    border: 4px solid #f4f4f4;
+}
+
+/* page sections */
+
+.page-section {
+    padding: 0 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    min-height: 125px;
+}
+
+.main-content {
+    position: relative;
+    padding-right: 50px;
+    /* To avoid overlapping of the title and the content */
+}
+
+.page-section-title {
+    font-size: 30pt;
+    position: absolute;
+    transform: translateY(-40%) translateX(-100%) rotate(-90deg);
+    transform-origin: center right;
+}
+
+.page-section-title-wrapper {
+    width: 30px;
+}
+
+.footer {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 9pt;
+}
+
+/* modal */
+/* The Modal (background) */
+.custom-modal {
+    display: none;
+    position: absolute; /* Position it absolutely */
+    z-index: 10; /* Sit on top */
+    left: 200px;
+    top: 0; /* Adjust this value to control the vertical position of the modal */
+    width: fit-content; /* Full width */
+}
+
+/* Modal Content/Box */
+.custom-modal-content {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.modal-text {
+    margin-top: 2px;
+    padding-right: 10px;
+}
+
+/* The Close Button */
+.custom-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    margin: 10px 0px 0 0;
+}
+
+.custom-close > span {
+    font-size: 20px;
+    transform: translateX(0px);
+}
+
+
+.custom-close:hover,
+.custom-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* return to top button */
+#return-to-top {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 10px;
+    /* Place the button at the bottom of the page */
+    right: 10px;
+    /* Place the button 10px from the right */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0);
+    /* Set a background color */
+    color: inherit;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 10px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 14px;
+    /* Increase font size */
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+}
+
+#return-to-top.dark {
+    border-color: white;
+}
+
+#return-to-top:hover {
+    transform: translateX(-4px) translateY(-4px);
+    box-shadow: 4px 4px 0 black;
+
+    /* Add a dark-grey background on hover */
+}
+
+#return-to-top.dark:hover {
+    box-shadow: 4px 4px 0 white;
+    border-color: white;
+    /* Add a dark-grey background on hover */
+}

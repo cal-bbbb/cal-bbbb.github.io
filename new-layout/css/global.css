@@ -56,6 +56,10 @@ h3 {
 
 }
 
+h4 {
+    font-size: 14pt;
+}
+
 .dm-toggle.dark {
     color: white;
 }

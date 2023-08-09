@@ -1,0 +1,23 @@
+ul.about-list-item {
+  list-style-type: none; /* Removes the default bullets */
+  padding-left: 0; /* Removes the default padding */
+}
+
+ul.about-list-item li {
+  position: relative; /* Sets the positioning context for the pseudo-element */
+  padding-left: 1em; /* Adds space for the en dash */
+}
+
+ul.about-list-item li::before {
+  content: "–"; /* En dash */
+  position: absolute;
+  left: 0;
+}
+
+.experience-item {
+    margin-bottom: 36px;
+}
+
+.experience-item-header {
+    margin-bottom: 12px;
+}

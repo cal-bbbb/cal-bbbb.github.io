@@ -20,7 +20,6 @@ const toggleDarkClass = (elements, action) => {
 let darkMode = localStorage.getItem("darkMode");
 if (darkMode === null) {
   darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "true" : "false";
-  darkModeSwitch = window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
 if (darkMode === "true") {
@@ -31,7 +30,6 @@ if (darkMode === "true") {
   bar3.classList.add("dark");
   resumeDownload.classList.add("dark");
   toggleDarkClass(bodyButtons, "add");
-  toggleDarkClass(toggleClasses, "add");
   darkModeSwitch.checked = true;
 }
 
@@ -45,7 +43,6 @@ darkModeSwitch.addEventListener("change", () => {
     resumeDownload.classList.add("dark");
 
     toggleDarkClass(bodyButtons, "add");
-    toggleDarkClass(toggleClasses, "add");
     localStorage.setItem("darkMode", "true");
   } else {
     document.body.classList.remove("dark");
@@ -56,12 +53,11 @@ darkModeSwitch.addEventListener("change", () => {
     resumeDownload.classList.remove("dark");
 
     toggleDarkClass(bodyButtons, "remove");
-    toggleDarkClass(toggleClasses, "remove");
     localStorage.setItem("darkMode", "false");
   }
 });
 
-/* Listener for system preferences-- need to update the state of the button if I implement */
+/* Listener for system preferences-- need to update the state of the button if I implement
 // Get the user's system dark mode preference
 let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -98,3 +94,4 @@ darkModeMediaQuery.addEventListener("change", updateDarkMode);
 
 // Initial update to match the current system preference
 updateDarkMode();
+ */

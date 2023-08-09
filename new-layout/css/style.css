@@ -1,179 +1,225 @@
 /* about section */
 .about-big-text {
-    font-size: 40pt;
+  font-size: 40pt;
 }
 
 /* Initial style for the links */
 .about-big-text-hover {
-    display: inline-block;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: color;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
 }
 
 .about-color:hover {
-    color: var(--about);
+  color: var(--about);
 }
 
 .about-color:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--about);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--about);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .design-color:hover {
-    color: var(--design);
+  color: var(--design);
 }
 
 .design-color:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--design);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--design);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .code-color:hover {
-    color: var(--code);
+  color: var(--code);
 }
 
 .code-color:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--code);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--code);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .photo-color:hover {
-    color: var(--photo);
+  color: var(--photo);
 }
 
 .photo-color:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--photo);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--photo);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .music-color:hover {
-    color: var(--music);
+  color: var(--music);
 }
 
 .music-color:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--music);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--music);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .resume-color:hover {
-    color: var(--resume);
+  color: var(--resume);
 }
 
 .resume-color:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: var(--resume);
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--resume);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .about-big-text-hover:focus:after,
 .about-big-text-hover:hover:after {
-    width: 100%;
-    left: 0%;
+  width: 100%;
+  left: 0%;
 }
 
 /* download resume button */
 .body-button {
-    /* Fixed/sticky position */
-    bottom: 10px;
-    /* Place the button at the bottom of the page */
-    right: 10px;
-    /* Place the button 10px from the right */
-    border: 1px solid black;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    z-index: 5;
-    background-color: rgba(0, 0, 0, 0);
-    /* Set a background color */
-    color: inherit;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 10px;
-    /* Some padding */
-    border-radius: 10px;
-    /* Rounded corners */
-    font-size: 14px;
-    /* Increase font size */
-    transition: all 0.3s ease-in-out;
+  /* Fixed/sticky position */
+  bottom: 10px;
+  /* Place the button at the bottom of the page */
+  right: 10px;
+  /* Place the button 10px from the right */
+  border: 1px solid black;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0);
+  /* Set a background color */
+  color: inherit;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 10px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 14px;
+  /* Increase font size */
+  transition: all 0.3s ease-in-out;
 }
 
 .body-button.dark {
-    border: 1px solid white;
+  border: 1px solid white;
 }
 
 .body-button:hover {
-    box-shadow: inset 4px 4px 0 black;
+  box-shadow: inset 4px 4px 0 black;
 }
 
 .body-button.dark:hover {
-    box-shadow: inset 4px 4px 0 white;
+  box-shadow: inset 4px 4px 0 white;
 }
 
 .download-resume-text {
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .body-button:hover > .download-resume-text {
-    transform: translateX(2px) translateY(2px);
+  transform: translateX(2px) translateY(2px);
 }
 
+.design-card {
+  border-radius: 4px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row-reverse;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-width: 300px;
+  max-width: 400px;
+  margin: 12px 0;
+  padding: 0;
+}
+
+.design-card.dark {
+  border: 1px solid white;
+}
+
+.design-card:hover {
+  transform: translateX(-4px) translateY(-4px);
+  box-shadow: 4px 4px 0 black;
+}
+
+.design-card.dark:hover {
+  box-shadow: 4px 4px 0 white;
+}
+
+.design-card-link {
+  text-decoration: none;
+}
+
+.card-preview > img {
+  width: 150px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.design-card .card-body {
+  padding: 8px;
+}
+
+.see-more > a {
+  text-decoration: none;
+}
+
+.see-more > a:hover {
+  text-decoration: underline;
+}

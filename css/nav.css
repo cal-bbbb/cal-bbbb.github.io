@@ -13,7 +13,7 @@
     left: 0;
     overflow: hidden;
     /*background-color: rgba(.2, .2, .2, .75);*/
-    background-color: black;
+    background-color: var(--bg-white);
     color: inherit;
     transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
@@ -66,12 +66,8 @@
 .bars {
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: var(--text);
     border-radius: 2px;
-}
-
-.bars.dark {
-    background-color: white;
 }
 
 #bar1 {
@@ -113,7 +109,7 @@
 }
 
 #checkbox:checked+.toggle .bars {
-    background-color: white
+    background-color: var(--text);
 }
 
 .menu li,
@@ -173,10 +169,10 @@
 @media (max-width: 960px) {
     .menu li,
     .menu-item a {
-        color: white;
+        color: var(--text);
     }
     .nav-content-wrapper {
-        color: white;
+        color: var(--text);
     }
 
     .toggle {
@@ -305,10 +301,5 @@
   }
 
   .dm-toggle {
-    color: inherit;
-  }
-
-  .dm-toggle.dark {
-    color: white;
-    
+    color: var(--bg-white);
   }

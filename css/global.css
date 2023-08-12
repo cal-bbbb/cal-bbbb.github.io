@@ -1,5 +1,6 @@
 :root {
     --bg-white: #FCF5ED;
+    --text: #0a0500;
     --main-color: rgb(255, 98, 0);
     --alt-color: rgb(255, 0, 217);
     --code: rgb(222, 15, 0);
@@ -26,20 +27,11 @@ body {
 
 
 /* DARK MODE STYLES */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #0a0500;
-        color: #fff;
-    }
-
-    .landing-title {
-        color: white;
-    }
-}
-
 body.dark {
     background-color: #0a0500;
     color: #fff;
+    --bg-white: #0a0500;
+    --text: #FCF5ED;
 }
 
 h1 {
@@ -47,21 +39,8 @@ h1 {
     font-weight: 600;
     line-height: 0.9;
 }
-
-h2 {
-
-}
-
-h3 {
-
-}
-
 h4 {
     font-size: 14pt;
-}
-
-.dm-toggle.dark {
-    color: white;
 }
 
 .body-wrapper {

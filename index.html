@@ -6,7 +6,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -17,81 +16,73 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
     <script
       src="https://kit.fontawesome.com/c233f11456.js"
       crossorigin="anonymous"
     ></script>
-    
-    <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="new-layout/css/global.css" />
-    <link rel="stylesheet" href="new-layout/css/nav.css" />
-    <link rel="stylesheet" href="new-layout/css/style.css" />
+
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-      .maintenance-title {
-        padding-left: 36px;
-      }
-
-      @media (max-width: 960px) {
-        .maintenance-title {
-        margin: 50px 0 0 0;
-      }  
-      .social-icon-wrapper > a{
-        color: inherit;
-      } 
-        }
-    </style>
   </head>
 
   <body>
     <div class="body-wrapper d-flex flex-column">
-      <!-- Main Content -->
-      <main class="content-container container-fluid" id="top">
-        <div class="page-section">
-          <div class="maintenance-title">
-            <h2>
-              this site is currently under maintenance.<br /><span
-                style="font-size: 18pt"
-                >(it will be worth the wait&mdash;trust me)</span
-              >
-            </h2>
-          </div>
-        </div>
-        <div class="page-section">
-          <div class="page-section-title-wrapper container-fluid">
-            <div class="name-title menu-item" style="text-align: right">
-              <h1
-                class="page-section-title landing-title"
-                style="font-size: 36pt; margin: -1px 0 0 -15px"
-              >
-                CALUM<br />BOONE
-              </h1>
+      <!-- return to top button -->
+      <button onclick="topFunction()" id="return-to-top" title="Go to top">
+        Top
+      </button>
+
+      <!-- Navigation -->
+      <div class="nav-wrapper">
+        <div class="nav-button-wrapper">
+          <input id="checkbox" type="checkbox" />
+          <label class="toggle" for="checkbox">
+            <div id="bar1" class="bars"></div>
+            <div id="bar2" class="bars"></div>
+            <div id="bar3" class="bars"></div>
+          </label>
+          <div class="nav-content-wrapper container-fluid">
+            <div class="color-toggle-wrapper">
+              <span class="switch-title">dark&nbsp;mode</span>
+              <label class="cswitch">
+                <input type="checkbox" class="ctoggle" id="dm-switch" />
+                <span class="cslider"></span>
+                <span class="card-side"></span>
+              </label>
             </div>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="body-text row">
-              <div
-                class="col-lg-4"
-                style="margin-bottom: 25px; min-width: 200px"
-              >
-                <h3>contact</h3>
-                <span
-                  ><a href="mailto:cal@calumboone.com" target="_blank"
-                    >cal@calumboone.com</a
-                  ></span
-                ><br />
-                <span
-                  ><a
-                    href="http://www.linkedin.com/in/calum-boone/"
-                    target="_blank"
-                    >linkedin.com/in/calum-boone/</a
-                  ></span
-                >
-                <div
-                  class="social-wrapper"
-                  style="margin: 10px 0 0 7px; flex-direction: row"
-                >
+            <div class="nav-content">
+              <div class="name-title menu-item" style="text-align: right">
+                <a href="../#top">
+                  <h1>CALUM<br />BOONE</h1>
+                </a>
+              </div>
+              <div class="d-flex flex-row-reverse">
+                <div class="menu">
+                  <ul class="menu-list-group">
+                    <li class="menu-item text-right">
+                      <a href="/about/">about</a
+                      ><!-- resume here -->
+                    </li>
+                    <li class="menu-item text-right">
+                      <a href="/design/">design</a>
+                    </li>
+                    <li class="menu-item text-right">
+                      <a href="/code/">code</a>
+                    </li>
+                    <li class="menu-item text-right">
+                      <a href="/photography/">photo</a>
+                    </li>
+                    <li class="menu-item text-right">
+                      <a href="/music/">music</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="social-wrapper">
                   <div class="social-icon-wrapper menu-item" id="linkedin">
                     <a
                       href="https://www.linkedin.com/in/calum-boone/"
@@ -99,21 +90,21 @@
                       class="fa fa-linkedin"
                     ></a>
                   </div>
-                  <div class="social-icon-wrapper dm-toggle menu-item" id="spotify">
+                  <div class="social-icon-wrapper menu-item" id="spotify">
                     <a
                       href="https://open.spotify.com/artist/6vexkAscGsLMnF12MjyIjK?si=Cv4MGb7RT2a-gFUlucfg2A"
                       target="_blank"
                       class="fa fa-spotify"
                     ></a>
                   </div>
-                  <div class="social-icon-wrapper dm-toggle menu-item" id="instagram">
+                  <div class="social-icon-wrapper menu-item" id="instagram">
                     <a
                       href="https://www.instagram.com/cal.bbbbbbbb/"
                       target="_blank"
                       class="fa fa-instagram"
                     ></a>
                   </div>
-                  <div class="social-icon-wrapper dm-toggle menu-item" id="twitter">
+                  <div class="social-icon-wrapper menu-item" id="twitter">
                     <a
                       href="https://twitter.com/CalumBoone"
                       target="_blank"
@@ -122,29 +113,209 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <span class="body-text"
-                  >Want to learn more in the meantime? Check out my resume
-                  here.</span
-                ><br /><br />
-                <button
-                  onclick="downloadResume()"
-                  class="body-button"
-                  id="download-resume"
-                  title="Download Resume"
-                >
-                  <div class="download-resume-text">
-                    <span>Download Resume</span>
+            </div>
+          </div>
+        </div>
+        <span class="mobile-title">CAL B.</span>
+      </div>
+      <!-- Main Content -->
+      <main class="content-container container-fluid" id="top">
+        <div class="container-fluid">
+          <div class="page-section" id="about">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">tl;dr</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <span class="body-text">Hello there! I'm Calum Boone and</span>
+              <h3 class="about-big-text">
+                I am a
+                <div id="customModal" class="custom-modal">
+                  <div class="custom-modal-content">
+                    <div class="custom-close">
+                      <span class="dm-toggle fa fa-xmark"></span>
+                    </div>
+                    <span class="modal-text">hover over me!</span>
                   </div>
-                </button>
+                </div>
+                <a href="#design" class="design-color about-big-text-hover">
+                  graphic designer</a
+                >
+                /
+                <a href="#code" class="code-color about-big-text-hover"
+                  >web designer & developer</a
+                >
+                /
+
+                <a href="#photo" class="photo-color about-big-text-hover"
+                  >photographer</a
+                >
+                /
+                <a href="#music" class="music-color about-big-text-hover"
+                  >musician</a
+                >
+                /
+              </h3>
+              <h3 class="about-big-text" style="font-size: 24pt">
+                <a href="#contact" class="resume-color about-big-text-hover">
+                  analyst</a
+                >
+                /
+                <a href="#contact" class="resume-color about-big-text-hover"
+                  >project coordinator</a
+                >
+                /
+                <a href="#contact" class="resume-color about-big-text-hover"
+                  >consultant</a
+                >
+                /
+                <a href="#contact" class="resume-color about-big-text-hover"
+                  >social media manager...</a
+                >
+              </h3>
+            </div>
+          </div>
+          <div class="page-section" id="design">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">design</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-xl-4 col-md-8">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+                <div class="col-xl-6" id="featured-design">
+                  <h3>featured</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-section" id="code">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">code</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-xl-4 col-md-8">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                  <h3>skills</h3>
+                  <div class="code-badges-wrapper">
+                    <div class="code-badge blue">HTML</div>
+                    <div class="code-badge blue">CSS</div>
+                    <div class="code-badge red">JS</div>
+                    <div class="code-badge red">React</div>
+                    <div class="code-badge red">D3.js</div>
+                    <div class="code-badge purple">SQL</div>
+                  </div>
+                </div>
+                <div class="col-xl-6" id="featured-code">
+                  <h3>featured</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-section" id="photo">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">photo</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="body-text">Add headshots for friends</div>
+            </div>
+          </div>
+          <div class="page-section" id="music">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">music</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-xl-8" style="margin-bottom: 18px;">
+                  <iframe
+                    style="border-radius: 12px"
+                    src="https://open.spotify.com/embed/artist/6vexkAscGsLMnF12MjyIjK?utm_source=generator"
+                    width="100%"
+                    height="352"
+                    frameborder="0"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div class="col-xl-4">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-section" id="contact">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">& more</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="body-text row">
+                <div
+                  class="col-lg-4"
+                  style="margin-bottom: 25px; min-width: 200px"
+                >
+                  <h3>contact</h3>
+                  <span
+                    ><a href="mailto:cal@calumboone.com" target="_blank"
+                      >cal@calumboone.com</a
+                    ></span
+                  ><br />
+                  <span
+                    ><a
+                      href="http://www.linkedin.com/in/calum-boone/"
+                      target="_blank"
+                      >linkedin.com/in/calum-boone/</a
+                    ></span
+                  >
+                </div>
+                <div class="col-lg-4">
+                  <span class="body-text"
+                    >Want to learn more about my professional history? check out
+                    my <a href="/about/">about page</a> or download my resume
+                    below.</span
+                  >
+                  <br /><br />
+                  <button
+                    onclick="downloadResume()"
+                    class="body-button"
+                    id="download-resume"
+                    title="Download Resume"
+                  >
+                    <div class="download-resume-text">
+                      <span>Download Resume</span>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <div class="footer">
-        Made from scratch with love. &copy; Calum Boone 2023
-      </div>
+    </div>
+    <div class="footer">
+      Made from scratch with love. &copy; Calum Boone 2023
     </div>
 
     <!-- some javascript... -->
@@ -154,7 +325,11 @@
     ></script>
 
     <script src="https://d3js.org/d3.v7.min.js "></script>
-    <script src="new-layout/js/dm-toggle.js"></script>
-    <script src="new-layout/js/resume-download.js"></script>
+
+    <script src="js/homepage-cards.js"></script>
+    <script src="js/dm-toggle.js"></script>
+    <script src="js/btt-button.js"></script>
+    <script src="js/resume-download.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

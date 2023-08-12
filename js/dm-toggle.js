@@ -1,8 +1,5 @@
 const darkModeSwitch = document.getElementById("dm-switch");
 const bttButton = document.getElementById("return-to-top");
-const bar1 = document.getElementById("bar1");
-const bar2 = document.getElementById("bar2");
-const bar3 = document.getElementById("bar3");
 const resumeDownload = document.getElementById("download-resume");
 
 const toggleClasses = document.getElementsByClassName("dm-toggle");
@@ -44,6 +41,7 @@ darkModeSwitch.addEventListener("change", () => {
 
     toggleDarkClass(bodyButtons, "add");
     localStorage.setItem("darkMode", "true");
+    localStorage.setItem("userToggled", "true"); // Set the userToggled flag
   } else {
     document.body.classList.remove("dark");
     bttButton.classList.remove("dark");
@@ -51,18 +49,23 @@ darkModeSwitch.addEventListener("change", () => {
     bar2.classList.remove("dark");
     bar3.classList.remove("dark");
     resumeDownload.classList.remove("dark");
-
     toggleDarkClass(bodyButtons, "remove");
     localStorage.setItem("darkMode", "false");
+    localStorage.setItem("userToggled", "true"); // Set the userToggled flag
   }
 });
 
-/* Listener for system preferences-- need to update the state of the button if I implement
+//Listener for system preferences-- need to update the state of the button if I implement
 // Get the user's system dark mode preference
 let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 // Function to update the site's theme to match the system preference
 const updateDarkMode = () => {
+  const userToggled = localStorage.getItem("userToggled") === "true";
+  
+  // If the user has manually toggled the switch, don't change the theme
+  if (userToggled) return;
+
   if (darkModeMediaQuery.matches) {
     document.body.classList.add("dark");
     bttButton.classList.add("dark");
@@ -85,6 +88,7 @@ const updateDarkMode = () => {
 
     toggleDarkClass(bodyButtons, "remove");
     toggleDarkClass(toggleClasses, "remove");
+    darkModeSwitch.checked = false; // Make sure to uncheck the switch
     localStorage.setItem("darkMode", "false");
   }
 }
@@ -94,4 +98,7 @@ darkModeMediaQuery.addEventListener("change", updateDarkMode);
 
 // Initial update to match the current system preference
 updateDarkMode();
- */
+
+if (darkMode != null) {
+localStorage.removeItem("userToggled");
+}

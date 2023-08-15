@@ -1,9 +1,10 @@
 [
   {
-    "title": "Pokemon: Knockoff",
+    "title": "Pokemon knockoff",
     "description": "An example of map generation & sprite generation with D3.js.",
     "content": "",
-    "file_name": "card-preview.jpg",
+    "year": "2021",
+    "file_name": "pokemon-preview.jpg",
     "project-link": "pokemon-knockoff",
     "tags": ["D3.js", "JS"]
   },
@@ -11,6 +12,7 @@
     "title": "Sticky Note",
     "description": "A demo of a simple sticky note web app using D3.js.",
     "content": "",
+    "year": "2021",
     "file_name": "card-preview.jpg",
     "project-link": "sticky-note",
     "tags": ["D3.js", "JS"]
@@ -18,17 +20,19 @@
   {
     "title": "Brick & Mortar",
     "description": "A concept project that finds nearby volunteer work and information.",
-    "content": "card-preview.jpg",
-    "file_name": "brick-and-mortar",
-    "project-link": "#",
+    "content": "",
+    "year": "2018",
+    "file_name": "card-preview.jpg",
+    "project-link": "brick-and-mortar",
     "tags": ["UI/UX Design", "HTML"]
   },
   {
     "title": "Soundsteer.ai",
     "description": "Some fresh logo updates for a small-town business looking to grow.",
-    "content": "card-preview.jpg",
-    "file_name": "brick-and-mortar",
-    "project-link": "#",
+    "content": "",
+    "year": "2023",
+    "file_name": "card-preview.jpg",
+    "project-link": "brick-and-mortar",
     "tags": ["UI/UX Design", "React", "Full Stack"]
   }
 ]

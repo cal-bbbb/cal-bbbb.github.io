@@ -21,7 +21,7 @@ d3.json("/resources/design-projects.json").then((data) => {
       .append("div")
       .attr("class", "card-preview")
       .append("img")
-      .attr("src", `projects/${project["project-link"]}/${project.file_name}`);
+      .attr("src", `projects/${project["project-link"]}/images/${project.file_name}`);
 
     // Append the card body
     const cardBody = card.append("div").attr("class", "card-body");
@@ -65,7 +65,7 @@ d3.json("/resources/code-projects.json").then((data) => {
       .append("div")
       .attr("class", "card-preview")
       .append("img")
-      .attr("src", `projects/${project["project-link"]}/${project.file_name}`);
+      .attr("src", `projects/${project["project-link"]}/images/${project.file_name}`);
 
     // Append the card body
     const cardBody = card.append("div").attr("class", "card-body");

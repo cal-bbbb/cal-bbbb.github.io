@@ -10,6 +10,7 @@
         html {
             font-family: 'Source Sans Pro', sans-serif;
             text-align: center;
+            background-color: #fff;
         }
         
         #canvas {
@@ -25,6 +26,11 @@
             width: 5632px;
             height: 4416px;
         }
+
+        #game-name {
+            padding: 0;
+            margin: 10px 0 2px 0;
+        }
     </style>
 </head>
 
@@ -32,7 +38,7 @@
     <div id="wrapper">
         <div id="canvas"></div>
 
-        <h5>What is your name?</h5>
+        <h5 id="game-name">Your name here:</h5>
         <input type="text" name="username" id="username" placeholder="Your name...">
     </div>
 

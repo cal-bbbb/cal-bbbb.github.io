@@ -1,23 +1,34 @@
 [
   {
-    "title": "Talk About It campaign",
-    "description": "A concept campaign focusing on mental health awareness.",
-    "content": "design_preview1.jpg",
-    "file_name": "talk-about-it",
-    "project-link": "#"
+    "title": "Pokemon: Knockoff",
+    "description": "An example of map generation & sprite generation with D3.js.",
+    "content": "",
+    "file_name": "card-preview.jpg",
+    "project-link": "pokemon-knockoff",
+    "tags": ["D3.js", "JS"]
   },
   {
-    "title": "Creatures of Contrast",
-    "description": "A fashion campaign concept focusing on how we interpret the world.",
-    "content": "COC-Pivot-Refined-08.png",
-    "file_name": "creatures-of-contrast",
-    "project-link": "#"
+    "title": "Sticky Note",
+    "description": "A demo of a simple sticky note web app using D3.js.",
+    "content": "",
+    "file_name": "card-preview.jpg",
+    "project-link": "sticky-note",
+    "tags": ["D3.js", "JS"]
   },
   {
-    "title": "Getter Tax",
+    "title": "Brick & Mortar",
+    "description": "A concept project that finds nearby volunteer work and information.",
+    "content": "card-preview.jpg",
+    "file_name": "brick-and-mortar",
+    "project-link": "#",
+    "tags": ["UI/UX Design", "HTML"]
+  },
+  {
+    "title": "Soundsteer.ai",
     "description": "Some fresh logo updates for a small-town business looking to grow.",
-    "content": "getter-logo-square.jpg",
-    "file_name": "getter-tax",
-    "project-link": "#"
+    "content": "card-preview.jpg",
+    "file_name": "brick-and-mortar",
+    "project-link": "#",
+    "tags": ["UI/UX Design", "React", "Full Stack"]
   }
 ]

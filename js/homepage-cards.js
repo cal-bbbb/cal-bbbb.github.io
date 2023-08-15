@@ -4,11 +4,11 @@ d3.json("/resources/design-projects.json").then((data) => {
   const container = d3.select("#featured-design");
 
   // Iterate through the data and append the cards
-  data.forEach((project) => {
+  data.slice(0, 3).forEach((project) => {
     // Create a link for the card
     const cardLink = container
       .append("a")
-      .attr("href", `/design/${project["project-link"]}`)
+      .attr("href", `/projects/${project["project-link"]}`)
       .attr("class", "design-card-link");
 
     // Create the card container
@@ -21,7 +21,7 @@ d3.json("/resources/design-projects.json").then((data) => {
       .append("div")
       .attr("class", "card-preview")
       .append("img")
-      .attr("src", `projects/${project["file_name"]}/${project.content}`);
+      .attr("src", `projects/${project["project-link"]}/${project.file_name}`);
 
     // Append the card body
     const cardBody = card.append("div").attr("class", "card-body");
@@ -48,11 +48,11 @@ d3.json("/resources/code-projects.json").then((data) => {
   const container = d3.select("#featured-code");
 
   // Iterate through the data and append the cards
-  data.forEach((project) => {
+  data.slice(0, 3).forEach((project) => {
     // Create a link for the card
     const cardLink = container
       .append("a")
-      .attr("href", `/design/${project["project-link"]}`)
+      .attr("href", `/projects/${project["project-link"]}`)
       .attr("class", "design-card-link");
 
     // Create the card container
@@ -65,7 +65,7 @@ d3.json("/resources/code-projects.json").then((data) => {
       .append("div")
       .attr("class", "card-preview")
       .append("img")
-      .attr("src", `projects/${project["file_name"]}/${project.content}`);
+      .attr("src", `projects/${project["project-link"]}/${project.file_name}`);
 
     // Append the card body
     const cardBody = card.append("div").attr("class", "card-body");

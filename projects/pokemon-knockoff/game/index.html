@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pokemon Knockoff</title>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <style>
+        body,
+        html {
+            font-family: 'Source Sans Pro', sans-serif;
+            text-align: center;
+        }
+        
+        #canvas {
+            text-align: center;
+            align-content: center;
+        }
+        
+        .tilewrap {
+            overflow: hidden;
+        }
+        
+        .tile {
+            width: 5632px;
+            height: 4416px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="canvas"></div>
+
+        <h5>What is your name?</h5>
+        <input type="text" name="username" id="username" placeholder="Your name...">
+    </div>
+
+    <script src="resources/map.js"></script>
+</body>
+
+</html>

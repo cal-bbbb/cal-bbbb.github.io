@@ -1,0 +1,79 @@
+body {
+	font: 14px sans-serif;
+}
+
+.wrapper {
+	background-color: #ddd;
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	overflow: auto;
+}
+
+.top-text {
+	font-weight: 200;
+	font-size: 36;
+	margin-left: 40px;
+	margin-top: 25px;
+}
+
+.logo-text {
+	color: #ff5555;
+	font-weight: 400;
+}
+
+.index-logo .index-logo-img {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 33%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: -100px;
+	-webkit-transition: -webkit-transform 1.5s ease-in-out;
+	transition: transform 1.5s ease-in-out;
+}
+
+
+.index-logo .index-logo-img:hover {
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.index-logo-2 .index-logo-img {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 66%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: -100px;
+	-webkit-transition: -webkit-transform 1.5s ease-in-out;
+	transition: transform 1.5s ease-in-out;
+}
+
+
+.index-logo-2 .index-logo-img:hover {
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.index-logo-text {
+	left: 33%;
+}
+
+.index-logo-text-2 {
+	left: 66%;
+}
+
+.index-logo-text, .index-logo-text-2 {
+	position: absolute;
+	top: 50%;
+	width: 300px;
+	margin-left: -150px;
+	margin-top: 130px;
+	text-align: center;
+	font-size: 18;
+	font-weight: bold;
+}
+

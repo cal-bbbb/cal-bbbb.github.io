@@ -4,16 +4,16 @@
     "description": "An example of map generation & sprite generation with D3.js.",
     "content": "",
     "year": "2021",
-    "file_name": "pokemon-preview.jpg",
+    "file_name": "pokemon-preview@0.25x.jpg",
     "project-link": "pokemon-knockoff",
     "tags": ["D3.js", "JS"]
   },
   {
-    "title": "Sticky Note",
+    "title": "Stickie",
     "description": "A demo of a simple sticky note web app using D3.js.",
     "content": "",
     "year": "2021",
-    "file_name": "card-preview.jpg",
+    "file_name": "stickie-preview@0.25x.jpg",
     "project-link": "sticky-note",
     "tags": ["D3.js", "JS"]
   },
@@ -22,7 +22,7 @@
     "description": "A concept project that finds nearby volunteer work and information.",
     "content": "",
     "year": "2018",
-    "file_name": "card-preview.jpg",
+    "file_name": "brick-mortar-preview@0.25x.jpg",
     "project-link": "brick-and-mortar",
     "tags": ["UI/UX Design", "HTML"]
   },
@@ -31,8 +31,8 @@
     "description": "Some fresh logo updates for a small-town business looking to grow.",
     "content": "",
     "year": "2023",
-    "file_name": "card-preview.jpg",
-    "project-link": "brick-and-mortar",
+    "file_name": "soundsteer-preview@0.25x.jpg",
+    "project-link": "soundsteer",
     "tags": ["UI/UX Design", "React", "Full Stack"]
   }
 ]

@@ -1,0 +1,92 @@
+body {
+	font: 14px sans-serif;
+}
+
+.menu {
+	margin-top: 20px;
+}
+
+.menu .nav-item {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#navbar-logo {
+	height: 50px;
+	display: inline-block;
+	margin-top: -12px;
+}
+
+.btn-custom { 
+	color: #ffffff; 
+	background-color: #FF5555; 
+	border-color: #FFFFFF; 
+} 
+
+.card .blog-card {
+	padding: 25px;
+	margin-top: 25px;
+}
+
+.index-1-img {
+	-webkit-filter: brightness(100%);
+	-moz-filter: brightness(100%);
+	-o-filter: brightness(100%);
+	-ms-filter: brightness(100%);
+	filter: brightness(100%);
+	transition: 1s ease;
+	-webkit-transition: 1s ease;
+	-moz-transition: 1s ease;
+	-o-transition: 1s ease;
+}
+
+.index-1-img:hover {
+	-webkit-filter: brightness(40%);
+	-moz-filter: brightness(40%);
+	-o-filter: brightness(40%);
+	-ms-filter: brightness(40%);
+	filter: brightness(40%);
+}
+
+.image-box {
+	position: relative;
+}
+
+.image-overlay {
+	width: 60%;
+	position: absolute;
+	left: -25px;
+	top: -400px;
+	display: inline;
+	border-color: transparent;
+}
+
+.image-overlay-2 {
+	width: 70%;
+	position: absolute;
+	left: -25px;
+	top: -400px;
+	display: inline;
+	border-color: transparent;
+	background-color; #ff5555;
+}
+
+.image-overlay .card-body {
+	border-color: transparent;
+}
+
+.card-custom {
+	background-color: #ff5555;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.card-header-index {
+	margin-top: -135px;
+}
+
+.index-text-1 {
+	padding: 40px;
+}

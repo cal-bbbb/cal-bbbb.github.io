@@ -31,10 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 ><!-- resume here -->
               </li>
               <li class="menu-item text-right">
-                <a href="/design/">design</a>
-              </li>
-              <li class="menu-item text-right">
-                <a href="/code/">code</a>
+                <a href="/projects/">projects</a>
               </li>
               <li class="menu-item text-right">
                 <a href="/photography/">photo</a>

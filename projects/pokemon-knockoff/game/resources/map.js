@@ -82,113 +82,6 @@ let sprite;
 let activeColor = "#CB4154";
 //0 through 9
 
-
-//fill map with active color
-for (i = 0; i < mapw; i++) {
-    square.push([]);
-
-    for (j = 0; j < maph; j++) {
-
-        square[i][j] = {
-            wall: map[i][j].wall,
-            x: map[i][j].x,
-            y: map[i][j].y,
-        };
-
-    }
-}
-
-drawItems(apokemart, 5, 5);
-drawItems(arock, 5, 10);
-drawItems(arock, 7, 15);
-drawItems(ahouse, 15, 10);
-drawItems(asign, 15, 15);
-
-
-//create canvas
-let svg = d3.select("#canvas")
-    .append("svg")
-    .attr("fill", "black")
-    .attr("viewBox", [0, 0, width, height]);
-
-//black background
-let blackbox = svg.append("rect")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", width)
-    .attr("height", height)
-    .attr("fill", "#000");
-
-//draw map
-drawMap();
-
-//create border
-let border = svg.append("rect")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", width)
-    .attr("height", height)
-    .attr("stroke", "#000")
-    .attr("stroke-width", 5)
-    .attr("fill", "rgba(0,0,0,0)");
-
-//create first sprite
-genSprite(dir);
-
-
-//Add the username
-let name = svg.append("text")
-    .attr("x", (cenx * scale) + 10)
-    .attr("y", (ceny * scale) - (scale - 40))
-    .style("font-weight", "800")
-    .style("text-shadow", "0px 0px 4px white")
-    .text("Name");
-
-//name listener
-d3.select("#username").on("input", function() {
-    let tinput = d3.select("#username").property("value");
-    name.text(tinput);
-});
-
-//key listener for movement
-document.addEventListener("keydown", (e) => {
-    ldir = dir;
-    if (e.code === "ArrowUp") {
-        if (dir != "north") {
-            dir = "north";
-        } else {
-            mapy -= checkMove(0, -1);
-            py -= checkMove(0, -1);
-        }
-    }
-    if (e.code === "ArrowLeft") {
-        if (ldir != "west") {
-            dir = "west";
-        } else {
-            mapx -= checkMove(-1, 0);
-            px -= checkMove(-1, 0);
-        }
-    }
-    if (e.code === "ArrowDown") {
-        if (ldir != "south") {
-            dir = "south";
-        } else {
-            mapy += checkMove(0, 1);
-            py += checkMove(0, 1);
-        }
-    }
-    if (e.code === "ArrowRight") {
-        if (ldir != "east") {
-            dir = "east";
-        } else {
-            mapx += checkMove(1, 0);
-            px += checkMove(1, 0);
-        }
-    }
-
-    update();
-});
-
 //check move
 function checkMove(x, y) {
 
@@ -312,11 +205,117 @@ function update() {
 
 }
 
+
+//fill map with active color
+for (i = 0; i < mapw; i++) {
+    square.push([]);
+
+    for (j = 0; j < maph; j++) {
+
+        square[i][j] = {
+            wall: map[i][j].wall,
+            x: map[i][j].x,
+            y: map[i][j].y,
+        };
+
+    }
+}
+
+drawItems(apokemart, 5, 5);
+drawItems(arock, 5, 10);
+drawItems(arock, 7, 15);
+drawItems(ahouse, 15, 10);
+drawItems(asign, 15, 15);
+
+
+//create canvas
+let svg = d3.select("#canvas")
+    .append("svg")
+    .attr("fill", "black")
+    .attr("viewBox", [0, 0, width, height]);
+
+//black background
+let blackbox = svg.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", height)
+    .attr("fill", "#000");
+
+//draw map
+drawMap();
+
+//create border
+let border = svg.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", height)
+    .attr("stroke", "#000")
+    .attr("stroke-width", 5)
+    .attr("fill", "rgba(0,0,0,0)");
+
+//create first sprite
+genSprite(dir);
+
+//Add the username
+let name = svg.append("text")
+    .attr("x", (cenx * scale) + 10)
+    .attr("y", (ceny * scale) - (scale - 40))
+    .style("font-weight", "800")
+    .style("text-shadow", "0px 0px 4px white")
+    .text("Name");
+
+//name listener
+d3.select("#username").on("input", function() {
+    let tinput = d3.select("#username").property("value");
+    name.text(tinput);
+});
+
+//key listener for movement
+document.addEventListener("keydown", (e) => {
+    ldir = dir;
+    if (e.code === "ArrowUp") {
+        if (dir != "north") {
+            dir = "north";
+        } else {
+            mapy -= checkMove(0, -1);
+            py -= checkMove(0, -1);
+        }
+    }
+    if (e.code === "ArrowLeft") {
+        if (ldir != "west") {
+            dir = "west";
+        } else {
+            mapx -= checkMove(-1, 0);
+            px -= checkMove(-1, 0);
+        }
+    }
+    if (e.code === "ArrowDown") {
+        if (ldir != "south") {
+            dir = "south";
+        } else {
+            mapy += checkMove(0, 1);
+            py += checkMove(0, 1);
+        }
+    }
+    if (e.code === "ArrowRight") {
+        if (ldir != "east") {
+            dir = "east";
+        } else {
+            mapx += checkMove(1, 0);
+            px += checkMove(1, 0);
+        }
+    }
+
+    update();
+});
+
+
 //resize the window if it gets changed
 function resize() {
     width = window.innerWidth - (window.innerWidth * .1);
     height = window.innerHeight - (window.innerHeight * .25);
-
     svg.attr("viewBox", [0, 0, width, height]);
 
     border.attr("width", width)

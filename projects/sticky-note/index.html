@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CAL B | All Projects</title>
+    <title>Projects | Pokemon Knockoff</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,7 @@
     />
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/nav.css" />
-    <link rel="stylesheet" href="music.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
@@ -53,7 +53,7 @@
             </div>
             <div class="nav-content">
               <div class="name-title menu-item" style="text-align: right">
-                <a href="/"
+                <a href="../#top"
                   ><h1>CALUM<br />BOONE</h1></a
                 >
               </div>
@@ -116,18 +116,26 @@
       </div>
       <!-- Main Content -->
       <main class="content-container container-fluid" id="top">
-        <div class="container-fluid">
-          <div class="page-section" id="about">
+          <div class="page-section">
             <div class="page-section-title-wrapper container-fluid">
-              <h2 class="page-section-title">projects</h2>
+              <h2 class="page-section-title">year</h2>
             </div>
             <div class="container-fluid main-content">
-              <div class="row">
-                <h3>profile</h3>
-                <span class="body-text">profile</span>
+              <div class="row body-text">
+                <div class="col-lg-5">
+                    <div id="project-info">
+                        <span>tags</span>
+                        <h3>title</h3>
+                        <p>content</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="game-widget">
+                        <iframe src="/projects/pokemon-knockoff/game/index.html" frameborder="0"></iframe>
+                    </div>                    
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </main>
     </div>
@@ -139,5 +147,7 @@
     <script src="https://d3js.org/d3.v7.min.js "></script>
     <script src="/js/dm-toggle.js"></script>
     <script src="/js/btt-button.js"></script>
+    <script src="index.js"></script>
+    
   </body>
 </html>

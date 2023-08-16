@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CAL B | All Projects</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,15 +23,17 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/c233f11456.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/nav.css" />
-    <link rel="stylesheet" href="music.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- title! -->
+    <title>Projects | Soundsteer.ai</title>
   </head>
 
   <body>
@@ -53,7 +62,7 @@
             </div>
             <div class="nav-content">
               <div class="name-title menu-item" style="text-align: right">
-                <a href="/"
+                <a href="../#top"
                   ><h1>CALUM<br />BOONE</h1></a
                 >
               </div>
@@ -116,15 +125,31 @@
       </div>
       <!-- Main Content -->
       <main class="content-container container-fluid" id="top">
-        <div class="container-fluid">
-          <div class="page-section" id="about">
-            <div class="page-section-title-wrapper container-fluid">
-              <h2 class="page-section-title">projects</h2>
+        <div class="page-section">
+          <div class="page-section-title-wrapper container-fluid">
+            <h2 class="page-section-title">year</h2>
+          </div>
+          <div class="main-content container-fluid">
+            <div class="row body-text">
+              <div class="col-lg-5">
+                <div id="project-info">
+                  <span>tags</span>
+                  <h3>title</h3>
+                  <p>content</p>
+                </div>
+              </div>
             </div>
-            <div class="container-fluid main-content">
-              <div class="row">
-                <h3>profile</h3>
-                <span class="body-text">profile</span>
+
+            <div class="row">
+              <div class="col-xl-8 col-lg-12">
+                <div class="game-widget">
+                  <a href="https://www.soundsteer.ai/">
+                    <iframe
+                      src="https://www.soundsteer.ai/"
+                      frameborder="0"
+                    ></iframe
+                  ></a>
+                </div>
               </div>
             </div>
           </div>
@@ -139,5 +164,6 @@
     <script src="https://d3js.org/d3.v7.min.js "></script>
     <script src="/js/dm-toggle.js"></script>
     <script src="/js/btt-button.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

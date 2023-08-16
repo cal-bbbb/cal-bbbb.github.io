@@ -14,37 +14,50 @@
 	<body>
 		<div class="menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a href="index.php" class="navbar-brand"><img src="images/textlogo.png" height="50px" /></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
-					<i class="fa fa-bars fa-lg py-1 text-white"></i>
-				</button>
-				<div class="navbar-collapse collapse" id="navbarCustom">
-					<ul class="navbar-nav">
-						<li class="nav-item ">
-							<a class="nav-link" href="service.php">Find Service</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="uni.php">B&amp;M Uni</a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="blog.php">The Mason's Blog</a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link" href="mypage.php">My Page Example</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="about.php">About Us</a>
-						</li>
-					</ul>
-				<div class="ml-auto navbar-text float-right">
-					<span class="ml-auto navbar-text" ><a href="#" style="padding-right: 25px;">FR</a></span>									
-					<span class="ml-auto navbar-text" style="padding-right: 25px;"><button class="btn btn-custom" >Sign Up</button></span>
-					<span class="ml-auto navbar-text" ><a href="#" style="padding-right: 25px;">Log In</a></span>
-				</div>
-			</div>
-		</nav>
-		</div>
+			  <a href="index.html" class="navbar-brand"
+				><img src="images/textlogo.png" height="50px"
+			  /></a>
+			  <button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarCustom"
+			  >
+				<i class="fa fa-bars fa-lg py-1 text-white"></i>
+			  </button>
+			  <div class="navbar-collapse collapse" id="navbarCustom">
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link" href="service.html">Find Service</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="uni.html">B&amp;M Uni</a>
+				  </li>
+	  
+				  <li class="nav-item">
+					<a class="nav-link" href="blog.html">The Mason's Blog</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="mypage.html">My Page Example</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="about.html">About Us</a>
+				  </li>
+				</ul>
+			  </div>
+			  <div class="ml-auto navbar-text float-right">
+				<span class="ml-auto navbar-text"
+				  ><a href="#" style="padding-right: 25px">FR</a></span
+				>
+				<span class="ml-auto navbar-text" style="padding-right: 25px"
+				  ><button class="btn btn-custom">Sign Up</button></span
+				>
+				<span class="ml-auto navbar-text"
+				  ><a href="#" style="padding-right: 25px">Log In</a></span
+				>
+			  </div>
+			</nav>
+		  </div>
 		<hr>
 		<div class="container">
 			<div class="row">
@@ -138,29 +151,8 @@
 						</div>
 							<div class="card-body">
 								<small style="padding-left: 25px;">Displaying 1-5 of (23)</small>
-								<?PHP 
-								for ($x = 0; $x < 5; $x++) {
-								echo '<div class="card" style="margin-bottom: 25px;">
-									<div class="card-body">
-										<div class="row">
-										<div class="col-lg-7">
-											<img src="images/logo.png" width="50px" height="50px" style="margin-right: 25px;" />
-											<b><a href="#" class="text-danger">Community Service Organization '.($x + 1).'</a></b>
-										</div>
-										<div class="col-lg-2" style="margin-top: 10px;">
-											'.rand(0,19).'.'.rand(0,9).'km
-										</div>
-										<div class="col-lg-2" style="margin-top: 10px;">
-											Rating:' . rand(2,4).'.'.rand(0,9).'/5
-										</div>
-										<div class="col-lg-1">
-											<span class="fa fa-heart fa-2x" style="margin-top: 7px;"></span>
-										</div>
-										</div>
-									</div>
-								</div>';
-								}
-								?>
+								<div id="output2"></div>
+
 							</div>
 					</div>
 				</div>
@@ -228,4 +220,38 @@
 		&copy; Brick &amp; Mortar 2018.
 		</div>
 	</footer>
+	<script>
+		// Assuming you have an element with an ID "output2" to append the generated content
+const outputElement2 = document.getElementById('output2');
+
+for (let x = 0; x < 5; x++) {
+    const distance = `${Math.floor(Math.random() * 20)}.${Math.floor(Math.random() * 10)}km`;
+    const rating = `${Math.floor(Math.random() * 3) + 2}.${Math.floor(Math.random() * 10)}/5`;
+
+    const cardHTML = `
+        <div class="card" style="margin-bottom: 25px;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img src="images/logo.png" width="50px" height="50px" style="margin-right: 25px;" />
+                        <b><a href="#" class="text-danger">Community Service Organization ${x + 1}</a></b>
+                    </div>
+                    <div class="col-lg-2" style="margin-top: 10px;">
+                        ${distance}
+                    </div>
+                    <div class="col-lg-2" style="margin-top: 10px;">
+                        Rating: ${rating}
+                    </div>
+                    <div class="col-lg-1">
+                        <span class="fa fa-heart fa-2x" style="margin-top: 7px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    outputElement2.innerHTML += cardHTML;
+}
+
+	</script>
 </html>

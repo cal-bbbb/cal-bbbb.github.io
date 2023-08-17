@@ -1,6 +1,8 @@
 :root {
     --bg-white: #FCF5ED;
     --text: #0a0500;
+    --white-res: #fff;
+    --black-res: #000;
     --main-color: rgb(255, 98, 0);
     --alt-color: rgb(255, 0, 217);
     --code: rgb(222, 15, 0);
@@ -32,6 +34,9 @@ body.dark {
     color: #fff;
     --bg-white: #0a0500;
     --text: #FCF5ED;
+    --white-res: #000000;
+    --black-res: #ffffff;
+
 }
 
 h1 {

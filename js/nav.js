@@ -1,6 +1,5 @@
 // D3 script to dynamically insert the navigation div
-document.addEventListener("DOMContentLoaded", function() {
-    const navHtml = `
+const navHtml = `
     <div class="nav-button-wrapper">
     <input id="checkbox" type="checkbox" />
     <label class="toggle" for="checkbox">
@@ -77,8 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
   </div>
   <span class="mobile-title">CAL B.</span>
     `;
-  
-    const navContainer = d3.select(".nav-wrapper");
-    navContainer.html(navHtml);
-  });
-  
+
+const navContainer = d3.select(".nav-wrapper");
+
+navContainer.html(navHtml);

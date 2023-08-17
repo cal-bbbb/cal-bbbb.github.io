@@ -28,8 +28,8 @@
   },
   {
     "title": "Soundsteer.ai",
-    "description": "A AI music management platform developed from scratch",
-    "content": "",
+    "description": "An AI music management platform developed with React, Supabase, and Flask.",
+    "content": "This project began in collaboration with <a href='mailto:brandon@soundsteer.ai'>Brandon Hresko</a> as a single idea: how can we let artists spend more time doing the stuff they like to do (making art) and less time doing menial tasks like scheduling content?<br /><br />",
     "year": "2023",
     "file_name": "soundsteer-preview@0.25x.jpg",
     "project-link": "soundsteer",

@@ -6,7 +6,7 @@
     "year": "2021",
     "file_name": "pokemon-preview@0.25x.jpg",
     "project-link": "pokemon-knockoff",
-    "tags": ["D3.js", "JS"]
+    "tags": ["D3.js", "JS", "CSS"]
   },
   {
     "title": "Stickie",
@@ -29,7 +29,7 @@
   {
     "title": "Soundsteer.ai",
     "description": "An AI music management platform developed with React, Supabase, and Flask.",
-    "content": "This project began in collaboration with <a href='mailto:brandon@soundsteer.ai'>Brandon Hresko</a> as a single idea: how can we let artists spend more time doing the stuff they like to do (making art) and less time doing menial tasks like scheduling content?<br /><br />",
+    "content": "<p>This project began in collaboration with <a href='mailto:brandon@soundsteer.ai'>Brandon Hresko</a> as a single idea: how can we let artists spend more time doing the stuff they like to do (making art) and less time doing menial tasks like scheduling content?</p><p>With AI all around us, the first thing we asked was how we can use it as a tool to improve artists' lives. After many late nights of working and planning, we settled on a web app powered by Artificial Intelligence.</p><p>The front-end is powered by React, Bootstrap, D3.js, and some other libraries. We connected it to our Supabase and Flask AI back-end.</p><p>Users will (eventually) be able to view and manage their social media content, analyze their streaming data, and use the AI to interact with their data and guide them along their careers.</p><p>This is a live project and a work in progress, so feel free to follow along <a href='https://soundsteer.ai'>here</a> or down below.</p>",
     "year": "2023",
     "file_name": "soundsteer-preview@0.25x.jpg",
     "project-link": "soundsteer",

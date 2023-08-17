@@ -10,7 +10,11 @@
     --photo: #efca10;
     --music: #8300ee;
     --resume: rgb(33, 119, 2);
-
+    --badge-red: rgb(240, 72, 60);
+    --badge-yellow: rgb(238, 173, 53);
+    --badge-blue: rgb(22, 179, 242);
+    --badge-green: rgb(112, 188, 18);
+    --badge-purple: rgb(143, 72, 209);
 }
 
 * {

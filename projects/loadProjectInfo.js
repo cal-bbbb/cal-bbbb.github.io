@@ -20,14 +20,26 @@ function displayProjectInfoWithD3(data, projectLink) {
     // Clear any existing content
     container.html("");
 
+    const leftContainer = container.append("div").attr("class", "col-lg-5");
+
     // Append tags
-    container.append("span").text(projectInfo.tags.join(", "));
+    const tagsContainer = leftContainer.append("div").attr("class", "tags-container");
+    projectInfo.tags.forEach(tag => {
+      tagsContainer.append("div")
+        .attr("class", "tag")
+        .attr("data-tag", tag)
+        .text(tag);
+    });
 
     // Append title
-    container.append("h3").text(projectInfo.title);
+    leftContainer.append("h3").text(projectInfo.title);
 
     // Append content
-    container.append("p").text(projectInfo.content || projectInfo.description); // Use content or fallback to description if content is empty
+    if (projectInfo.content) {
+      leftContainer.append("div").html(projectInfo.content); 
+    } else {
+      leftContainer.append("p").text(projectInfo.description);
+    }
 
     // Update the year in the page-section-title
     d3.select(".page-section-title").text(projectInfo.year);
@@ -39,6 +51,8 @@ function displayProjectInfoWithD3(data, projectLink) {
     console.error("Project not found for link:", projectLink);
   }
 }
+
+
 
 function externalProjectCall(requestedProject) {
   // Usage:

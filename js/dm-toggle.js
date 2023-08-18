@@ -26,11 +26,13 @@ if (darkMode === "true") {
   applyDarkMode(true);
 }
 
-darkModeSwitch.addEventListener("change", () => {
+try{darkModeSwitch.addEventListener("change", () => {
   const isDark = darkModeSwitch.checked;
   applyDarkMode(isDark);
   localStorage.setItem("userToggled", "true"); // Set the userToggled flag
-});
+});}
+catch {
+}
 
 // Listener for system preferences
 let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");

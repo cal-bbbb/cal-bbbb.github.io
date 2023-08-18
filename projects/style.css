@@ -23,6 +23,41 @@ iframe {
     /* This is a maybe. */
 }
 
+
+/* projects cards */
+.Card {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    /* Text on the left, image on the right */
+    gap: 10px;
+    /* Space between text and image */
+    margin-bottom: 12px;
+    background-color: var(--white-res);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.Card-content {
+    display: flex;
+    flex-direction: column;
+    /* Stack the title, description, and tags vertically */
+    /* Space them out evenly */
+    padding: 6px 8px;
+}
+
+.Card-description {
+    overflow: hidden;         /* Hides the overflow */
+    text-overflow: ellipsis;  /* Shows the ellipsis when there's overflow */
+}
+
+.card-preview {
+    display: flex;
+    justify-content: center;
+    /* Center the image horizontally */
+    align-items: center;
+    /* Center the image vertically */
+}
+
 /* tags */
 .tags-container {
     display: flex;
@@ -47,8 +82,8 @@ iframe {
 
 /* If you want different colors for different tags, you can add more styles like this */
 .tag[data-tag="Full Stack"] {
-    background: rgb(22,179,242);
-    background: linear-gradient(90deg, rgba(22,179,242,1) 28%, rgba(84,0,176,.75) 50%, rgba(240,72,60,1) 72%);
+    background: rgb(22, 179, 242);
+    background: linear-gradient(90deg, rgba(22, 179, 242, 1) 28%, rgba(84, 0, 176, .75) 50%, rgba(240, 72, 60, 1) 72%);
 }
 
 .tag[data-tag="React"] {

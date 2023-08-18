@@ -12,34 +12,39 @@ const toggleDarkClass = (elements, action) => {
 
 const applyDarkMode = (isDark) => {
   const action = isDark ? "add" : "remove";
-  toggleDarkClass([document.body, bttButton, ...bodyButtons, ...toggleClasses], action);
+  toggleDarkClass(
+    [document.body, bttButton, ...bodyButtons, ...toggleClasses],
+    action
+  );
   darkModeSwitch.checked = isDark;
   localStorage.setItem("darkMode", isDark ? "true" : "false");
 };
 
 let darkMode = localStorage.getItem("darkMode");
 if (!darkMode) {
-  darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "true" : "false";
+  darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "true"
+    : "false";
 }
 
 if (darkMode === "true") {
   applyDarkMode(true);
 }
 
-try{darkModeSwitch.addEventListener("change", () => {
-  const isDark = darkModeSwitch.checked;
-  applyDarkMode(isDark);
-  localStorage.setItem("userToggled", "true"); // Set the userToggled flag
-});}
-catch {
-}
+try {
+  darkModeSwitch.addEventListener("change", () => {
+    const isDark = darkModeSwitch.checked;
+    applyDarkMode(isDark);
+    localStorage.setItem("userToggled", "true"); // Set the userToggled flag
+  });
+} catch {}
 
 // Listener for system preferences
 let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 const updateDarkMode = () => {
   const userToggled = localStorage.getItem("userToggled") === "true";
-  
+
   // If the user has manually toggled the switch, don't change the theme
   if (!userToggled) {
     const isDark = darkModeMediaQuery.matches;

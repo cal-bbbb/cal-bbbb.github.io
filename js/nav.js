@@ -77,6 +77,9 @@ const navHtml = `
   <span class="mobile-title">CAL B.</span>
     `;
 
-const navContainer = d3.select(".nav-wrapper");
+let navContainer = d3.select(".nav-wrapper");
+
+//clear it
+navContainer.html();
 
 navContainer.html(navHtml);

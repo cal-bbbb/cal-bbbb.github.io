@@ -25,39 +25,40 @@ iframe {
 
 
 /* projects cards */
-.Card {
-    display: grid;
-    grid-template-columns: 1fr 150px;
-    /* Text on the left, image on the right */
-    gap: 10px;
-    /* Space between text and image */
+/* projects cards */
+.project-card {
+    display: flex;
+    justify-content: space-between; /* Separate content and image */
+    align-items: center;
     margin-bottom: 12px;
     border: 1px solid var(--black-res);
     background-color: var(--white-res);
     border-radius: 8px;
     overflow: hidden;
-}
-
-.Card-content {
-    display: flex;
-    flex-direction: column;
-    /* Stack the title, description, and tags vertically */
-    /* Space them out evenly */
+    max-width: 300px; /* Set max width */
     padding: 6px 8px;
 }
 
-.Card-description {
-    overflow: hidden;         /* Hides the overflow */
-    text-overflow: ellipsis;  /* Shows the ellipsis when there's overflow */
+.project-card-content {
+    display: flex;
+    flex-direction: column; /* Stack the title, description, and tags vertically */
+    flex-grow: 1; /* Allow content to fill the card */
 }
 
-.card-preview {
+.project-card-description {
+    width: 150px;           /* Fixed width */
+    white-space: nowrap;    /* Prevent text from wrapping */
+    overflow: hidden;       /* Hide overflowed content */
+    text-overflow: ellipsis;/* Display ellipsis for overflowed content */}
+
+.project-card-preview {
     display: flex;
-    justify-content: center;
-    /* Center the image horizontally */
+    justify-content: flex-end; /* Stick the image to the right side */
     align-items: center;
-    /* Center the image vertically */
+    flex-shrink: 0; /* Prevent image container from shrinking */
 }
+
+
 
 /* tags */
 .tags-container {
@@ -114,5 +115,35 @@ iframe {
 
 .tag[data-tag="UI/UX Design"] {
     background-color: var(--badge-blue);
+    /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Concept"] {
+    background-color: var(--badge-purple);
+    /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Marketing"] {
+    background-color: var(--badge-pink);
+    /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Campaign"] {
+    background-color: var(--badge-pink);
+    /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Typography"] {
+    background-color: var(--badge-yellow);
+    /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Marketing"] {
+    background-color: var(--badge-yellow);
+    /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Logos"] {
+    background-color: var(--badge-orange);
     /* change to your preferred color for this specific tag */
 }

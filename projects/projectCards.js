@@ -22,21 +22,23 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
     const section = d3.select(`#${sectionId}`);
 
     data.forEach((project) => {
-        // Updated line with the conditional class
-        const projectCard = section.append("div").attr("class", isFeatured ? "Card body-text featured" : "Card body-text");
+        const projectCard = section.append("div").attr("class", isFeatured ? "project-card featured" : "project-card");
+        
+        // Create an anchor element for the project link
+        const projectLink = projectCard.append("a").attr("href", project["project-link"]);
 
-        // Card content container
-        const cardContent = projectCard.append("div").attr("class", "Card-content");
+        // Card content container with the body-text class
+        const cardContent = projectLink.append("div").attr("class", "project-card-content body-text");
 
         // Add project title and description on the left
-        const textContainer = cardContent.append("div").attr("class", "text-container");
-        textContainer.append("h4").attr("class", "Card-title").text(project.title);
-        textContainer.append("p").attr("class", "Card-description").text(project.description);
+        const textContainer = cardContent.append("div").attr("class", "project-text-container");
+        textContainer.append("h4").attr("class", "project-card-title").text(project.title);
+        textContainer.append("p").attr("class", "project-card-description").text(project.description);
 
         // Add project image on the right (if exists)
         if (project.file_name) {
-            projectCard.append("div")
-                .attr("class", "card-preview")
+            projectLink.append("div")
+                .attr("class", "project-card-preview")
                 .append("img")
                 .attr("src", `/projects/${project["project-link"]}/images/${project.file_name}`);
         }

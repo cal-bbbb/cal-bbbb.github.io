@@ -11,8 +11,10 @@ Promise.all([codeProjectsDataPromise, designProjectsDataPromise]).then(
     const sortedProjects = allProjects.sort((a, b) => b.year - a.year);
 
     // Populate the sections
-    populateProjectsSection(sortedProjects, "code-projects");
-    populateProjectsSection(sortedProjects, "design-projects");
+    const sortedCodeProjects = sortedProjects.filter(project => project.type==="code");
+    const sortedDesignProjects = sortedProjects.filter(project => project.type==="design");
+    populateProjectsSection(sortedCodeProjects, "code-projects");
+    populateProjectsSection(sortedDesignProjects, "design-projects");
 
     // Get the top 3 latest projects for the featured section
     const featuredProjects = sortedProjects.slice(0, 3);
@@ -31,7 +33,8 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
     // Create an anchor element for the project link
     const projectLink = projectCard
       .append("a")
-      .attr("href", project["project-link"]);
+      .attr("href",
+      `/projects/${project["project-link"]}/`);
 
     // Add project image on top (if exists)
     if (project.file_name) {
@@ -47,19 +50,16 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
     // Card content container with the body-text class
     const cardContent = projectLink
       .append("div")
-      .attr("class", "project-card-content body-text");
+      .attr("class", "project-card-content");
 
     // Add project title and description on the bottom
-    const textContainer = cardContent
-      .append("div")
-      .attr("class", "project-text-container");
-    textContainer
+      cardContent
       .append("h4")
       .attr("class", "project-card-title")
       .text(project.title);
-    textContainer
+      cardContent
       .append("p")
-      .attr("class", "project-card-description")
+      .attr("class", "project-card-description body-text")
       .text(
         project.description.substring(0, 85) +
           (project.description.length > 85 ? "..." : "")
@@ -67,7 +67,7 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
 
     // Add tags (if exists)
     if (project.tags && project.tags.length) {
-      const tagsDiv = textContainer
+      const tagsDiv = projectLink
         .append("div")
         .attr("class", "tags-container");
       project.tags.forEach((tag) => {

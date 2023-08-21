@@ -38,7 +38,7 @@ d3.json("/resources/design-projects.json").then((data) => {
     .append("span")
     .attr("class", "see-more")
     .append("a")
-    .attr("href", "/design")
+    .attr("href", "/projects")
     .html("See more &RightArrow;");
 });
 
@@ -82,6 +82,6 @@ d3.json("/resources/code-projects.json").then((data) => {
     .append("span")
     .attr("class", "see-more")
     .append("a")
-    .attr("href", "/code")
+    .attr("href", "/projects")
     .html("See more &RightArrow;");
 });

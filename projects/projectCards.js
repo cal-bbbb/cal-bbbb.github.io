@@ -26,19 +26,20 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
   const section = d3.select(`#${sectionId}`);
 
   data.forEach((project) => {
-    const projectCard = section
-      .append("div")
-      .attr("class", isFeatured ? "project-card featured" : "project-card");
-
     // Create an anchor element for the project link
-    const projectLink = projectCard
+    const projectLink = section
       .append("a")
+      .attr("class", "project-card-link")
       .attr("href",
       `/projects/${project["project-link"]}/`);
 
+    const projectCard = projectLink
+      .append("div")
+      .attr("class", isFeatured ? "project-card featured" : "project-card");
+
     // Add project image on top (if exists)
     if (project.file_name) {
-      projectLink
+      projectCard
         .append("div")
         .attr("class", "project-card-preview")
         .append("img")
@@ -48,7 +49,7 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
         );
     }
     // Card content container with the body-text class
-    const cardContent = projectLink
+    const cardContent = projectCard
       .append("div")
       .attr("class", "project-card-content");
 
@@ -67,7 +68,7 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
 
     // Add tags (if exists)
     if (project.tags && project.tags.length) {
-      const tagsDiv = projectLink
+      const tagsDiv = cardContent
         .append("div")
         .attr("class", "tags-container");
       project.tags.forEach((tag) => {

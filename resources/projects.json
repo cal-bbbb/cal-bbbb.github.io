@@ -1,8 +1,10 @@
 [
   {
+    "id": "0000",
     "title": "Pokemon knockoff",
     "description": "An example of map generation & sprite generation with D3.js.",
     "content": "",
+    "page_content": "Hello",
     "year": "2021",
     "type": "code",
     "file_name": "pokemon-preview@0.25x.jpg",
@@ -11,9 +13,11 @@
     "tags": ["D3.js", "JS", "CSS"]
   },
   {
+    "id": "0001",
     "title": "Stickie",
     "description": "A demo of a simple sticky note web app using D3.js.",
     "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "page_content": "Hello",
     "year": "2021",
     "type": "code",
     "file_name": "stickie-preview@0.25x.jpg",
@@ -22,9 +26,11 @@
     "tags": ["D3.js", "JS"]
   },
   {
+    "id": "0002",
     "title": "Brick & Mortar",
     "description": "A concept project that finds nearby volunteer work and information.",
     "content": "",
+    "page_content": "Hello",
     "year": "2018",
     "type": "code",
     "file_name": "brick-mortar-preview@0.25x.jpg",
@@ -33,14 +39,52 @@
     "tags": ["UI/UX Design", "HTML"]
   },
   {
+    "id": "0003",
     "title": "Soundsteer.ai",
     "description": "An AI music management platform developed with React, Supabase, and Flask.",
     "content": "<p>This project began in collaboration with <a href='mailto:brandon@soundsteer.ai'>Brandon Hresko</a> as a single idea: how can we let artists spend more time doing the stuff they like to do (making art) and less time doing menial tasks like scheduling content?</p><p>With AI all around us, the first thing we asked was how we can use it as a tool to improve artists' lives. After many late nights of working and planning, we settled on a web app powered by Artificial Intelligence.</p><p>The front-end is powered by React, Bootstrap, D3.js, and some other libraries. We connected it to our Supabase and Flask AI back-end.</p><p>Users will (eventually) be able to view and manage their social media content, analyze their streaming data, and use the AI to interact with their data and guide them along their careers.</p><p>This is a live project and a work in progress, so feel free to follow along <a href='https://soundsteer.ai'>here</a> or down below.</p>",
+    "page_content": "Hello",
     "year": "2023",
     "type": "code",
     "file_name": "soundsteer-preview@0.25x.jpg",
     "file_name_full": "soundsteer-preview.jpg",
     "project-link": "soundsteer",
     "tags": ["UI/UX Design", "React", "Full Stack"]
+  },
+  {
+    "id": "0004",
+    "title": "Talk About It campaign",
+    "description": "A concept campaign focusing on mental health awareness.",
+    "page_content": "Hello",
+    "content": "",
+    "year": "2022",
+    "type": "design",
+    "file_name": "design_preview1.jpg",
+    "project-link": "talk-about-it",
+    "tags": ["Concept", "Marketing", "Campaign"]
+  },
+  {
+    "id": "0005",
+    "title": "Creatures of Contrast",
+    "description": "A fashion campaign concept focusing on how we interpret the world.",
+    "page_content": "Hello",
+    "content": "",
+    "year": "2022",
+    "type": "design",
+    "file_name": "COC-Pivot-Refined-08.png",
+    "project-link": "creatures-of-contrast",
+    "tags": ["Concept", "Marketing", "Campaign"]
+  },
+  {
+    "id": "0006",
+    "title": "Getter Tax",
+    "description": "Some fresh logo updates for a small-town business looking to grow.",
+    "page_content": "Hello",
+    "content": "",
+    "year": "2022",
+    "type": "design",
+    "file_name": "getter-logo-square.jpg",
+    "project-link": "getter-tax",
+    "tags": ["Logos", "Typography"]
   }
 ]

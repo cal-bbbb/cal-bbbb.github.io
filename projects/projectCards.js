@@ -17,7 +17,7 @@ Promise.all([codeProjectsDataPromise, designProjectsDataPromise]).then(
     populateProjectsSection(sortedDesignProjects, "design-projects");
 
     // Get the top 3 latest projects for the featured section
-    const featuredProjects = sortedProjects.slice(0, 3);
+    const featuredProjects = sortedProjects.slice(0, 4);
     populateProjectsSection(featuredProjects, "featured-projects", true);
   }
 );

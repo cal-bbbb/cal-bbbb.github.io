@@ -27,7 +27,7 @@
     display: block;
     font-weight: 600;
     font-size: 36pt;
-    margin-left: 65px;
+    margin-left: 82px;
 }
 
 #checkbox:checked~.nav-content-wrapper {

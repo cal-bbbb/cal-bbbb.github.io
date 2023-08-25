@@ -15,6 +15,8 @@ function displayProjectInfoWithD3(data, projectLink) {
   if (projectInfo) {
     const head = d3.select("head");
 
+    head.select("title").remove();
+
     // Add title
     head.append("title").text(projectInfo.title);
 
@@ -28,20 +30,36 @@ function displayProjectInfoWithD3(data, projectLink) {
       .append("div")
       .attr("class", "page-section-title-wrapper container-fluid")
       .append("h2")
-      .attr("class", "page-section-title");
+      .attr("class", "page-section-title")
+      .attr("id", "project-year");
 
-    const descriptionContainer = container.append("div").attr("class", "row");
-    const leftContainer = descriptionContainer
+    const contentContainer = container
       .append("div")
-      .attr("class", "col-lg-5");
-    const rightContainer = descriptionContainer
-      .append("div")
-      .attr("class", "col-lg-7 order-lg-first");
+      .attr("class", "container-fluid main-content");
 
-    const projectContainer = container.append("div").attr("class", "row");
+    const briefContainer = contentContainer
+      .append("div")
+      .attr("class", "row body-text")
+      .attr("id", "project-brief");
+
+    const imageContainer = briefContainer
+      .append("div")
+      .attr("class", "col-lg-7");
+
+    const descriptionContainer = briefContainer
+      .append("div")
+      .attr("class", "col-lg-5 order-lg-first");
+
+    const projectContainer = contentContainer
+      .append("div")
+      .attr("class", "row body-text")
+      .attr("id", "project-content")
+      .append("div")
+      .attr("class", "col-xl-10 col-lg-12 mx-auto");
+
     // Append image
     if (projectInfo.file_name) {
-      const imagePreview = rightContainer
+      const imagePreview = imageContainer
         .append("div")
         .attr("class", "proj-preview-frame")
         .append("img")
@@ -54,7 +72,7 @@ function displayProjectInfoWithD3(data, projectLink) {
     }
 
     // Append tags
-    const tagsContainer = leftContainer
+    const tagsContainer = descriptionContainer
       .append("div")
       .attr("class", "tags-container");
     projectInfo.tags.forEach((tag) => {
@@ -66,17 +84,23 @@ function displayProjectInfoWithD3(data, projectLink) {
     });
 
     // Append title
-    leftContainer.append("h3").text(projectInfo.title);
+    descriptionContainer.append("h3").text(projectInfo.title);
 
-    // Append content
+    // Append descriptions
     if (projectInfo.content) {
-      leftContainer.append("div").html(projectInfo.content);
+      descriptionContainer.append("div").html(projectInfo.content);
     } else {
-      leftContainer.append("p").text(projectInfo.description);
+      descriptionContainer.append("p").text(projectInfo.description);
+    }
+
+    //Add content
+    if (projectInfo.page_content) {
+      projectContainer.html(projectInfo.page_content);
+    } else {
     }
 
     // Update the year in the page-section-title
-    d3.select(".page-section-title").text(projectInfo.year);
+    d3.select("#project-year").text(projectInfo.year);
   } else {
     const container = d3.select("#project-info");
 
@@ -103,7 +127,7 @@ function displayProjectInfoById(data, projectId) {
 function displayProjectLandingPage() {
   const container = d3.select("#project-info");
 
-  // Use the existing structure of your index.html
+  // Load the default homepage
   let content = `
         <div class="page-section-title-wrapper container-fluid">
           <h2 class="page-section-title">projects</h2>

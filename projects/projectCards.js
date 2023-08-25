@@ -1,31 +1,25 @@
 // Fetch the JSON data using D3
-const codeProjectsDataPromise = d3.json("/resources/code-projects.json");
-const designProjectsDataPromise = d3.json("/resources/design-projects.json");
+const cardProjectsDataPromise = d3.json("/resources/projects.json");
 
-Promise.all([codeProjectsDataPromise, designProjectsDataPromise]).then(
-  ([codeProjects, designProjects]) => {
-    // Combine the projects
-    const allProjects = [...codeProjects, ...designProjects];
-
+cardProjectsDataPromise.then((allProjects) => {
     // Sort them by year to get the latest projects
     const sortedProjects = allProjects.sort((a, b) => b.year - a.year);
 
-    // Populate the sections
-    const sortedCodeProjects = sortedProjects.filter(project => project.type==="code");
-    const sortedDesignProjects = sortedProjects.filter(project => project.type==="design");
+    // Populate the sections based on the type property
+    const sortedCodeProjects = sortedProjects.filter(project => project.type === "code");
+    const sortedDesignProjects = sortedProjects.filter(project => project.type === "design");
     populateProjectsSection(sortedCodeProjects, "code-projects");
     populateProjectsSection(sortedDesignProjects, "design-projects");
 
     // Get the top 3 latest projects for the featured section
     const featuredProjects = sortedProjects.slice(0, 4);
     populateProjectsSection(featuredProjects, "featured-projects", true);
-  }
-);
+});
 
 function populateProjectsSection(data, sectionId, isFeatured = false) {
-  const section = d3.select(`#${sectionId}`);
+    const section = d3.select(`#${sectionId}`);
 
-  data.forEach((project) => {
+    data.forEach((project) => {
     // Create an anchor element for the project link
     const projectLink = section
       .append("a")

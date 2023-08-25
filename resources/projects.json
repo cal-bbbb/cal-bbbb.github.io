@@ -21,7 +21,7 @@
     "title": "Stickie",
     "description": "A demo of a simple sticky note web app using D3.js.",
     "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-    "page_content": "Hello",
+    "page_content": "<div class='game-widget'><iframe src='/projects/sticky-note/web-app/index.html' frameborder='0'></iframe></div>",
     "year": "2021",
     "type": "code",
     "file_name": "stickie-preview@0.25x.jpg",
@@ -69,8 +69,8 @@
     "id": "0004",
     "title": "Talk About It campaign",
     "description": "A concept campaign focusing on mental health awareness.",
-    "page_content": "Hello",
     "content": "",
+    "page_content": "Hello",
     "year": "2022",
     "type": "design",
     "file_name": "design_preview1.jpg",
@@ -85,8 +85,8 @@
     "id": "0005",
     "title": "Creatures of Contrast",
     "description": "A fashion campaign concept focusing on how we interpret the world.",
-    "page_content": "Hello",
     "content": "",
+    "page_content": "Hello",
     "year": "2022",
     "type": "design",
     "file_name": "COC-Pivot-Refined-08.png",
@@ -101,14 +101,63 @@
     "id": "0006",
     "title": "Getter Tax",
     "description": "Some fresh logo updates for a small-town business looking to grow.",
-    "page_content": "Hello",
     "content": "",
+    "page_content": "Hello",
     "year": "2022",
     "type": "design",
     "file_name": "getter-logo-square.jpg",
     "project-link": "getter-tax",
     "tags": [
       "Logos",
+      "Typography"
+    ]
+  },
+  {
+    "id": "0007",
+    "title": "LEVEL: the game",
+    "description": "A game of comraderie, competitorship, absurdity, and getting absolutely hammered.",
+    "content": "",
+    "page_content": "",
+    "year": "2022",
+    "type": "design",
+    "file_name": "level-logo.jpg",
+    "project-link": "level",
+    "tags": [
+      "Product Design",
+      "Game Design",
+      "Logos",
+      "Typography"
+    ]
+  },
+  {
+    "id": "0008",
+    "title": "Circlas",
+    "description": "A game of comraderie, competitorship, absurdity, and getting absolutely hammered.",
+    "content": "",
+    "page_content": "",
+    "year": "2022",
+    "type": "design",
+    "file_name": "circlas-cover.jpg",
+    "project-link": "circle-game",
+    "tags": [
+      "Product Design",
+      "Game Design",
+      "Logos",
+      "Typography"
+    ]
+  },
+  {
+    "id": "0009",
+    "title": "Personal Identity Campaign",
+    "description": "A game of comraderie, competitorship, absurdity, and getting absolutely hammered.",
+    "content": "",
+    "page_content": "",
+    "year": "2022",
+    "type": "design",
+    "file_name": "pic-cover.jpg",
+    "project-link": "personal-identity-campaign",
+    "tags": [
+      "Graphic Design",
       "Typography"
     ]
   }

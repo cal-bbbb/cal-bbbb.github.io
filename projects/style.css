@@ -109,6 +109,20 @@ iframe {
     flex-grow: 1;
 }
 
+.project-card-preview {
+    display: flex;
+    justify-content: flex-end;
+    /* Stick the image to the right side */
+    align-items: center;
+    flex-shrink: 0;
+    /* Prevent image container from shrinking */
+}
+
+.project-card-preview>img {
+    width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
 
 /* tags */
 .tags-container {

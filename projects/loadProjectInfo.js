@@ -211,9 +211,12 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
       .append("h4")
       .attr("class", "project-card-title")
       .text(project.title);
+      
     cardContent
-      .append("p")
-      .attr("class", "project-card-description body-text")
+    .append("div")
+    .attr("class", "project-card-description")
+    .append("p")
+      .attr("class", "body-text")
       .text(
         project.description.substring(0, 85) +
           (project.description.length > 85 ? "..." : "")

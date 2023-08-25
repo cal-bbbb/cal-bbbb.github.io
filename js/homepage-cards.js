@@ -9,6 +9,7 @@ d3.json("/resources/projects.json").then((data) => {
   const sortedCodeProjects = codeProjects.sort((a, b) => b.year - a.year);
   generateCards(sortedCodeProjects, "#featured-code");
 
+  console.log("cards generated.");
 });
 
 function generateCards(projects, containerSelector) {

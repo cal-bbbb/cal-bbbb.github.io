@@ -62,6 +62,7 @@ const navHtml = `
                 class="fa fa-instagram"
               ></a>
             </div>
+            <!-- twitter is a maybe
             <div class="social-icon-wrapper menu-item" id="twitter">
               <a
                 href="https://twitter.com/CalumBoone"
@@ -69,6 +70,7 @@ const navHtml = `
                 class="fa fa-twitter"
               ></a>
             </div>
+            -->
           </div>
         </div>
       </div>

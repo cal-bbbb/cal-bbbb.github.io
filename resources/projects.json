@@ -3,14 +3,18 @@
     "id": "0000",
     "title": "Pokemon knockoff",
     "description": "An example of map generation & sprite generation with D3.js.",
-    "content": "",
+    "content": "<div class='game-widget'><iframe src='/projects/pokemon-knockoff/game/index.html' frameborder='0'></iframe></div>",
     "page_content": "Hello",
     "year": "2021",
     "type": "code",
     "file_name": "pokemon-preview@0.25x.jpg",
     "file_name_full": "pokemon-preview.jpg",
     "project-link": "pokemon-knockoff",
-    "tags": ["D3.js", "JS", "CSS"]
+    "tags": [
+      "D3.js",
+      "JS",
+      "CSS"
+    ]
   },
   {
     "id": "0001",
@@ -23,7 +27,10 @@
     "file_name": "stickie-preview@0.25x.jpg",
     "file_name_full": "stickie-preview.jpg",
     "project-link": "sticky-note",
-    "tags": ["D3.js", "JS"]
+    "tags": [
+      "D3.js",
+      "JS"
+    ]
   },
   {
     "id": "0002",
@@ -36,7 +43,10 @@
     "file_name": "brick-mortar-preview@0.25x.jpg",
     "file_name_full": "brick-mortar-preview.jpg",
     "project-link": "brick-and-mortar",
-    "tags": ["UI/UX Design", "HTML"]
+    "tags": [
+      "UI/UX Design",
+      "HTML"
+    ]
   },
   {
     "id": "0003",
@@ -49,7 +59,11 @@
     "file_name": "soundsteer-preview@0.25x.jpg",
     "file_name_full": "soundsteer-preview.jpg",
     "project-link": "soundsteer",
-    "tags": ["UI/UX Design", "React", "Full Stack"]
+    "tags": [
+      "UI/UX Design",
+      "React",
+      "Full Stack"
+    ]
   },
   {
     "id": "0004",
@@ -61,7 +75,11 @@
     "type": "design",
     "file_name": "design_preview1.jpg",
     "project-link": "talk-about-it",
-    "tags": ["Concept", "Marketing", "Campaign"]
+    "tags": [
+      "Concept",
+      "Marketing",
+      "Campaign"
+    ]
   },
   {
     "id": "0005",
@@ -73,7 +91,11 @@
     "type": "design",
     "file_name": "COC-Pivot-Refined-08.png",
     "project-link": "creatures-of-contrast",
-    "tags": ["Concept", "Marketing", "Campaign"]
+    "tags": [
+      "Concept",
+      "Marketing",
+      "Campaign"
+    ]
   },
   {
     "id": "0006",
@@ -85,6 +107,9 @@
     "type": "design",
     "file_name": "getter-logo-square.jpg",
     "project-link": "getter-tax",
-    "tags": ["Logos", "Typography"]
+    "tags": [
+      "Logos",
+      "Typography"
+    ]
   }
 ]

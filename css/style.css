@@ -221,3 +221,41 @@
 .code-badge.purple::before {
   background-color: rgb(238, 173, 53);
 }
+
+/* about section */
+.social-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.social-icon-wrapper {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--text);
+  border-radius: 4px;
+}
+
+.social-icon-wrapper:hover {
+  transform: translate(-4px, -4px);
+}
+
+/* Icons */
+.social-icon-wrapper .fa {
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  transform: translateY(5px);
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.8;
+  transition: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 200ms;
+  color: var(--main-color);
+  transform: none;
+}

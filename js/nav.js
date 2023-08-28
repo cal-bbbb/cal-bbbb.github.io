@@ -40,38 +40,6 @@ const navHtml = `
               </li>
             </ul>
           </div>
-          <div class="social-wrapper">
-            <div class="social-icon-wrapper menu-item" id="linkedin">
-              <a
-                href="https://www.linkedin.com/in/calum-boone/"
-                target="_blank"
-                class="fa fa-linkedin"
-              ></a>
-            </div>
-            <div class="social-icon-wrapper menu-item" id="spotify">
-              <a
-                href="https://open.spotify.com/artist/6vexkAscGsLMnF12MjyIjK?si=Cv4MGb7RT2a-gFUlucfg2A"
-                target="_blank"
-                class="fa fa-spotify"
-              ></a>
-            </div>
-            <div class="social-icon-wrapper menu-item" id="instagram">
-              <a
-                href="https://www.instagram.com/cal.bbbbbbbb/"
-                target="_blank"
-                class="fa fa-instagram"
-              ></a>
-            </div>
-            <!-- twitter is a maybe
-            <div class="social-icon-wrapper menu-item" id="twitter">
-              <a
-                href="https://twitter.com/CalumBoone"
-                target="_blank"
-                class="fa fa-twitter"
-              ></a>
-            </div>
-            -->
-          </div>
         </div>
       </div>
     </div>

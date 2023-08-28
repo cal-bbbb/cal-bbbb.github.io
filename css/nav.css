@@ -142,30 +142,6 @@
     color: var(--main-color);
 }
 
-.social-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Icons */
-.fa {
-    font-size: 24px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    transform: translateX(-10px)
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-    opacity: 0.8;
-    transition: cubic-bezier(0.19, 1, 0.22, 1);
-    transition-duration: 200ms;
-    color: var(--main-color);
-    ;
-}
-
 @media (max-width: 960px) {
     .menu li,
     .menu-item a {

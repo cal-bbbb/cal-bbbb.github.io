@@ -97,6 +97,9 @@ function displayProjectInfoWithD3(data, projectLink) {
     if (projectInfo.page_content) {
       projectContainer.html(projectInfo.page_content);
     } else {
+      if (projectInfo.id === "0000") {
+        
+      }
     }
 
     // Update the year in the page-section-title

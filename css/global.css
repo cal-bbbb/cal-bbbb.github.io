@@ -277,7 +277,6 @@ h4 {
 #return-to-top:hover {
   transform: translateX(-4px) translateY(-4px);
   box-shadow: 4px 4px 0 black;
-
   /* Add a dark-grey background on hover */
 }
 

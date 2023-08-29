@@ -55,7 +55,7 @@ function displayProjectInfoWithD3(data, projectLink) {
       .attr("class", "row body-text")
       .attr("id", "project-content")
       .append("div")
-      .attr("class", "col-xl-10 col-lg-12 mx-auto");
+      .attr("class", "col-12 mx-auto");
 
     // Append image
     if (projectInfo.file_name) {
@@ -68,7 +68,7 @@ function displayProjectInfoWithD3(data, projectLink) {
           `/projects/${projectInfo["project-link"]}/images/${projectInfo.file_name_full}`
         )
         .attr("class", "proj-preview-image")
-        .attr("style", "aspect-ratio: 1; width: 100%;");
+        .attr("style", "aspect-ratio: 1; width: 100%; border: 1px solid var(--text)");
     }
 
     // Append tags
@@ -97,9 +97,7 @@ function displayProjectInfoWithD3(data, projectLink) {
     if (projectInfo.page_content) {
       projectContainer.html(projectInfo.page_content);
     } else {
-      if (projectInfo.id === "0000") {
-        
-      }
+      //load default content
     }
 
     // Update the year in the page-section-title

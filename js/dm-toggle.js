@@ -55,9 +55,6 @@ const updateDarkMode = () => {
 // Event listener for changes in the system's dark mode preference
 darkModeMediaQuery.addEventListener("change", updateDarkMode);
 
-// Initial update to match the current system preference
-updateDarkMode();
-
 if (darkMode) {
   localStorage.removeItem("userToggled");
 }

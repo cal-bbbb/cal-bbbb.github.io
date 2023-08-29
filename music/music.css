@@ -1,11 +1,21 @@
 .music-content {
   margin-bottom: 24px;
-  @media (min-width: 960px) {
-    
-  }
+}
+
+.music-content .row {
+  margin-bottom: 18px;
+}
+
+.project-content-col {
+  margin-bottom: 18px;
 }
 
 .music-page-photo {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  border: 1px solid var(--text);
+  border-radius: 12px;
+  box-shadow: -4px 4px 0 var(--text);
+  margin-bottom: 18px;
 }

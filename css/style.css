@@ -1,6 +1,8 @@
 /* about section */
 .about-big-text {
   font-size: 40pt;
+  display: inline-block; /* Added to display h3 tags inline */
+  vertical-align: top; /* Ensures they align at the top */
 }
 
 /* Initial style for the links */
@@ -33,6 +35,7 @@
   transition-duration: 400ms;
   transition-property: width, left;
 }
+
 
 .design-color:hover {
   color: var(--design);

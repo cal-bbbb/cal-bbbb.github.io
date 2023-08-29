@@ -29,20 +29,6 @@ body {
   background-color: var(--bg-white);
 }
 
-.landing-title {
-  color: black;
-}
-
-/* DARK MODE STYLES */
-body.dark {
-  background-color: #0a0500;
-  color: #fff;
-  --bg-white: #0a0500;
-  --text: #fcf5ed;
-  --white-res: #000000;
-  --black-res: #ffffff;
-}
-
 h1 {
   font-size: 48pt;
   font-weight: 600;
@@ -72,6 +58,39 @@ h4 {
 .body-text a:hover {
   color: var(--main-color);
 }
+
+@media (min-width: 768px) {
+  .tp-1 {
+    padding-top: 10%;
+  }
+
+  .tp-2 {
+    padding-top: 20%;
+  }
+
+  .tp-3 {
+    padding-top: 30%;
+  }
+
+  .tp-4 {
+    padding-top: 40%;
+  }
+
+  .tp-5 {
+    padding-top: 50%;
+  }
+}
+
+/* DARK MODE STYLES */
+body.dark {
+  background-color: #0a0500;
+  color: #fff;
+  --bg-white: #0a0500;
+  --text: #fcf5ed;
+  --white-res: #000000;
+  --black-res: #ffffff;
+}
+
 
 /* SCROLLBAR */
 /*scrollbar stuff */

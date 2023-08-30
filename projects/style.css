@@ -438,7 +438,7 @@
   position: absolute;
   top: 15px;
   right: 35px;
-  color: var(--black-res);
+  color: white;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;

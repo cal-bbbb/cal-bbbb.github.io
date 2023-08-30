@@ -19,8 +19,11 @@ const navLogo = `<?xml version="1.0" encoding="utf-8"?>
 	c-4,0.2-7.6-0.6-7.6-0.6c-1.7-0.4-3-0.9-3.7-1.2"/>
 <path id="path5" class="st0" d="M296.1,84.2c-0.5,0.2-1.3,0.4-2.3,1c-1.9,1.1-1.1,1.5-2,1.5s-1.3-0.8-1.3-1.5c0-2,1.8-2.9,3.8-3.3
 	c0.6-0.1,2.3,1.6,2.3,1.7C296.7,83.9,296.5,84,296.1,84.2"/>
-</svg>
+  <path id="path6" class="st0" d="M8.7,93.3c59.2-2.8,121.9-3.7,187.7-1.9c32.1,0.9,63.4,2.3,93.9,4.3"/>
+  </svg>
 `;
+
+let navD = `<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285.55 9.22"><defs><style>.cls-1{fill:#fff;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4px;}</style></defs></svg>`;
 
 // D3 script to dynamically insert the navigation div
 const navHtml = `
@@ -66,7 +69,9 @@ const navHtml = `
     </div>
   </div>
   <div class="mobile-title-wrapper">
-    <span class="mobile-title">${navLogo}</span>
+  <a href="/">
+  <span class="mobile-title">${navLogo}</span>
+  </a>
   </div>`;
 
 let navContainer = d3.select(".nav-wrapper");

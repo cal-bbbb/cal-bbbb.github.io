@@ -34,13 +34,17 @@
   width: calc(100% - 150px);
   height: auto;
   margin: 25px 0 20px 80px;
+  transition: all 0.5s ease-in-out;
 }
 
-@keyframes fadeOut {
-  to {
-      opacity: 0;
-      visibility: hidden;
-  }
+.mobile-title .st0 {
+  transition: 0.2s ease-in-out;
+}
+
+.mobile-title:hover #path6 {
+  display: inherit;
+  stroke: var(--main-color);
+  animation: draw 0.5s forwards;
 }
 
 /* SVG animation */
@@ -78,6 +82,11 @@
 #path5 {
   animation: draw 0.75s forwards 2.4s;
 }
+
+#path6 {
+  display: none;
+}
+
 
 
 
@@ -246,90 +255,4 @@
   }
 }
 
-/* dark mode toggle */
-.color-toggle-wrapper {
-  position: fixed;
-  bottom: 10px;
-  left: 15px;
-}
 
-.switch-title {
-  position: absolute;
-  transform: rotate(90deg) translateX(-20px) translateY(53px);
-  transform-origin: center right;
-}
-
-.cswitch {
-  --input-focus: rgba(0, 0, 0, 0);
-  --bg-color: #fff;
-  --bg-color-alt: #666;
-  --t-main-color: black;
-  --input-out-of-focus: #ccc;
-  --toggle-white: #fff;
-  --toggle-main: #323232;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  width: 50px;
-  height: 24px;
-  transform: translateX(calc(50% - 10px));
-}
-
-.ctoggle {
-  opacity: 0;
-}
-
-.cslider {
-  box-sizing: border-box;
-  border-radius: 100px;
-  border: 2px solid var(--t-main-color);
-  box-shadow: 4px 4px var(--t-main-color);
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  transition: 0.3s;
-}
-
-.cslider:before {
-  content: "";
-  box-sizing: border-box;
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  left: 3px;
-  bottom: 2px;
-  border-radius: 100px;
-  background-color: black;
-  color: var(--t-main-color);
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  line-height: 25px;
-  transition: 0.3s;
-}
-
-.ctoggle:checked + .cslider {
-  background-color: var(--input-focus);
-  transform: translateX(-24px);
-  box-shadow: 4px 4px white;
-  border: 2px solid white;
-  border-radius: 100px;
-  color: var(--t-main-color);
-}
-
-.ctoggle:checked + .cslider:before {
-  content: "";
-  transform: translateX(24px);
-  background-color: var(--main-color);
-}
-
-.dm-toggle {
-  color: var(--bg-white);
-}

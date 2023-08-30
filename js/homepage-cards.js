@@ -66,9 +66,10 @@ function generateCards(projects, containerSelector, filter = null) {
 
   if (filter === "all") {
   } else {
-    container.append("span");
         // Add the "See more" link separately
         container
+        .append("div")
+        .attr("class", "see-more-wrapper")
         .append("span")
         .attr("class", "see-more")
         .append("a")

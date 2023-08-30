@@ -47,6 +47,14 @@
 }
 
 /*project pages */
+.page-section {
+  margin-bottom: 20px;
+}
+
+.main-content .row:last-child {
+  margin-bottom: 0;
+}
+
 .proj-preview-frame {
   width: 100%;
   height: auto;
@@ -65,6 +73,14 @@
   @media (max-width: 992px) {
     max-width: 250px;
   }
+}
+
+.main-content .row {
+  margin-bottom: 18px;
+}
+
+.project-content-col {
+  margin-bottom: 18px;
 }
 
 .project-image-row {
@@ -103,14 +119,7 @@
   margin-bottom: 18px;
 }
 
-.main-content .row {
-  margin-bottom: 18px;
-}
-
-.project-content-col {
-  margin-bottom: 18px;
-}
-
+/* filter title tags */
 .filter-title-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -129,7 +138,7 @@
   background-color: #333;
   /* change to your preferred color */
   border-radius: 50px;
-  padding: 8px 16px;
+  padding: 8px 16px !important;
   /* space inside the tag */
   color: var(--text);
   /* text color */
@@ -272,6 +281,45 @@
   text-overflow: ellipsis;
 }
 
+/* project nav buttons */
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: fit-content;
+  gap: 24px;
+}
+
+.prev-button, .next-button {
+  width: fit-content;
+  padding: 10px 20px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--text);
+  border-radius: 12px;
+  font-size: 9pt;
+  transition: all 0.3s;
+}
+
+.prev-button:hover, .next-button:hover {
+  color: var(--main-color);
+  background-color: var(--white-res);
+  border: 1px solid var(--text);
+  text-decoration: none;
+}
+
+.prev-button:hover {
+    transform: translateX(-4px);
+    box-shadow: 4px 0 0 var(--text);
+}
+
+.next-button:hover {
+  transform: translateX(4px);
+  box-shadow: -4px 0 0 var(--text);
+
+}
 /* tags */
 .tags-container {
   display: flex;
@@ -291,6 +339,17 @@
   /* text color */
   font-size: 9pt;
   /* adjust as needed */
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tag:hover {
+  transform: translateX(4px) translateY(-4px);
+  box-shadow: -4px 4px 0 var(--text);
+}
+
+.card-tag:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .tag[data-tag="placeholder"] {
@@ -392,7 +451,7 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1000; /* Sit on top */
-  padding-top: 50px; /* Location of the box */
+  padding-top: 70px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -436,8 +495,8 @@
 /* The Close Button */
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 10px;
+  right: 30px;
   color: white;
   font-size: 40px;
   font-weight: bold;

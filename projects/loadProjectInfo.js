@@ -67,7 +67,7 @@ function displayProjectFilteredPage(filter) {
           <div class="row fproject-section-wrapper">
             <a class="filter-title-link" href="/projects">  
               <div class="filter-title-wrapper">
-                <div class="filter-title-tag" data-tag="${filter}">
+                <div class="filter-title-tag tag" data-tag="${filter}">
                   <h3>
                     ${filter}
                     <i class="fa-solid fa-xmark" style="padding-left: 5px;"></i>
@@ -89,29 +89,33 @@ function displayProjectFilteredPage(filter) {
   d3.json("/resources/projects.json").then((allProjects) => {
     // Sort them by year to get the latest projects
     const sortedProjects = allProjects.sort((a, b) => b.year - a.year);
+
     // Populate the sections based on the type property
-    const sortedCodeProjects = sortedProjects.filter(
-      (project) => project.type === "code"
+    const filteredProjects = sortedProjects.filter(
+      (project) => project.type === filter
     );
-    const sortedDesignProjects = sortedProjects.filter(
-      (project) => project.type === "design"
+
+    // Populate the sections based on the tags property
+    const filteredTagProjects = sortedProjects.filter((project) =>
+      project.tags.includes(filter)
     );
+
     // Get the top 4 latest projects for the featured section
     const featuredProjects = sortedProjects.slice(0, 3);
 
     if (filter === "all") {
       populateProjectsSection(sortedProjects, "filter-projects");
-    } else if (filter === "code") {
-      populateProjectsSection(sortedCodeProjects, "filter-projects");
-    } else if (filter === "design") {
-      populateProjectsSection(sortedDesignProjects, "filter-projects");
     } else if (filter === "latest") {
-      populateProjectsSection(featuredProjects, "filter-projects", true);
+      populateProjectsSection(featuredProjects, "filter-projects");
+    } else if (filter === "code" || filter === "design") {
+      populateProjectsSection(filteredProjects, "filter-projects");
+    } else {
+      populateProjectsSection(filteredTagProjects, "filter-projects");
     }
   });
 }
 
-function populateProjectsSection(data, sectionId, isFeatured = false) {
+function populateProjectsSection(data, sectionId) {
   const section = d3.select(`#${sectionId}`);
 
   data.forEach((project) => {
@@ -121,9 +125,7 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
       .attr("class", "project-card-link")
       .attr("href", `/projects/?p=${project.id}`); // Updated link format
 
-    const projectCard = projectLink
-      .append("div")
-      .attr("class", isFeatured ? "project-card featured" : "project-card");
+    const projectCard = projectLink.append("div").attr("class", "project-card");
 
     // Add project image on top (if exists)
     if (project.file_name) {
@@ -162,7 +164,7 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
     // Prepend the project type as the first tag
     tagsDiv
       .append("div")
-      .attr("class", "tag")
+      .attr("class", "tag card-tag")
       .attr("data-tag", project.type)
       .text(project.type);
 
@@ -173,7 +175,7 @@ function populateProjectsSection(data, sectionId, isFeatured = false) {
       // Placeholder tag
       tagsDiv
         .append("div")
-        .attr("class", "tag placeholder")
+        .attr("class", "tag card-tag placeholder")
         .attr("data-tag", "placeholder")
         .text(`+${tagsLength} more`);
     }
@@ -246,7 +248,7 @@ function displayProjectInfoWithD3(data, projectLink) {
           "src",
           `/projects/${projectInfo["project-link"]}/images/${projectInfo.file_name_full}`
         )
-        .attr("class", "proj-preview-image")
+        .attr("class", "proj-preview-image");
     }
 
     // Append tags
@@ -256,6 +258,9 @@ function displayProjectInfoWithD3(data, projectLink) {
 
     // Prepend the project type as the first tag
     tagsContainer
+      .append("a")
+      .attr("style", "text-decoration: none;")
+      .attr("href", `/projects/?f=${projectInfo.type}`)
       .append("div")
       .attr("class", "tag")
       .attr("data-tag", projectInfo.type)
@@ -263,6 +268,9 @@ function displayProjectInfoWithD3(data, projectLink) {
 
     projectInfo.tags.forEach((tag) => {
       tagsContainer
+        .append("a")
+        .attr("style", "text-decoration: none;")
+        .attr("href", `/projects/?f=${tag}`)
         .append("div")
         .attr("class", "tag")
         .attr("data-tag", tag)
@@ -276,7 +284,10 @@ function displayProjectInfoWithD3(data, projectLink) {
     if (projectInfo.content) {
       descriptionContainer.append("div").html(projectInfo.content);
     } else {
-      descriptionContainer.append("p").attr("style", "font-size: 14pt; line-height: 1.4;").text(projectInfo.description);
+      descriptionContainer
+        .append("p")
+        .attr("style", "font-size: 14pt; line-height: 1.4;")
+        .text(projectInfo.description);
     }
 
     //Add content
@@ -288,6 +299,9 @@ function displayProjectInfoWithD3(data, projectLink) {
 
     // Update the year in the page-section-title
     d3.select("#project-year").text(projectInfo.year);
+
+    //add next/prev project button here
+    appendNavigationButtons(projectInfo.id, data, contentContainer);
 
     setupImageModal();
   } else {
@@ -323,29 +337,56 @@ function displayProjectInfoById(data, projectId) {
   }
 }
 
+function appendNavigationButtons(projectId, data, contentContainer) {
+  const currentIndex = data.findIndex((project) => project.id === projectId);
+
+  const navigationContainer = contentContainer
+    .append("div")
+    .attr("class", "row navigation-buttons");
+
+  if (currentIndex > 0) {
+    const prevProjectId = data[currentIndex - 1].id;
+    const prevProjectName = data[currentIndex - 1].title;
+    navigationContainer
+      .append("a")
+      .attr("href", `/projects/?p=${prevProjectId}`)
+      .html(`&LeftArrow;&nbsp;&nbsp;${prevProjectName}`)
+      .attr("class", "prev-button");
+  }
+
+  if (currentIndex < data.length - 1) {
+    const nextProjectId = data[currentIndex + 1].id;
+    const nextProjectName = data[currentIndex + 1].title;
+
+    navigationContainer
+      .append("a")
+      .attr("href", `/projects/?p=${nextProjectId}`)
+      .html(`${nextProjectName}&nbsp;&nbsp;&RightArrow;`)
+      .attr("class", "next-button");
+  }
+}
+
 function setupImageModal() {
   const modal = d3.select("#myModal");
   const modalImg = d3.select("#img01");
   const captionText = d3.select("#caption");
   const close = d3.select(".close");
 
-  d3.selectAll(".project-page-image").on("click", function() {
-    console.log("Image clicked");  // This should log when an image is clicked
+  d3.selectAll(".project-page-image").on("click", function () {
     const img = d3.select(this);
     modal.style("display", "block");
     modalImg.attr("src", img.attr("src"));
     captionText.text(img.attr("alt"));
   });
 
-  d3.selectAll(".proj-preview-image").on("click", function() {
-    console.log("Image clicked");  // This should log when an image is clicked
+  d3.selectAll(".proj-preview-image").on("click", function () {
     const img = d3.select(this);
     modal.style("display", "block");
     modalImg.attr("src", img.attr("src"));
     captionText.text(img.attr("alt"));
   });
 
-  close.on("click", function() {
+  close.on("click", function () {
     modal.style("display", "none");
   });
 }

@@ -139,20 +139,78 @@
   display: flex;
   flex-direction: row-reverse;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
   margin: 12px 0;
   padding: 0;
 }
 
+.card-preview > img {
+  width: 150px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .design-card {
+    flex-direction: column; /* stack elements vertically on small screens */
+  }
+
+  .card-preview > img {
+    width: 100%; /* make image full width on small screens */
+    height: auto; /* maintain aspect ratio */
+    border-bottom: 1px solid black;
+  }
+}
+
+.design-card:hover {
+  transform: translateX(4px) translateY(-4px);
+  box-shadow: -4px 4px 0 var(--text);
+}
+
+.design-card-link {
+  text-decoration: none;
+}
+
+.homepage-card-title {
+  margin-bottom: 4px;
+}
+
+.design-card .card-body {
+  padding: 8px;
+}
+
+.see-more-wrapper {
+  width: fit-content;
+}
+
+#featured-code .see-more-wrapper {
+  margin-bottom: 32px;
+}
+
+.see-more > a {
+  text-decoration: none;
+}
+
+.see-more > a:hover {
+  text-decoration: underline;
+}
+
+/* all projects section */
 #all-projects {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0 24px;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#all-projects .design-card {
+  margin: 0;
 }
 
 #all-projects h3 {
-flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* card tags */
@@ -182,41 +240,6 @@ flex-grow: 1;
 .tag[data-tag="design"] {
   background-color: var(--badge-red);
   /* change to your preferred color for this specific tag */
-}
-
-.design-card:hover {
-  transform: translateX(4px) translateY(-4px);
-  box-shadow: -4px 4px 0 var(--text);
-}
-
-.design-card-link {
-  text-decoration: none;
-}
-
-.card-preview > img {
-  width: 150px;
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-
-.homepage-card-title {
-  margin-bottom: 4px;
-}
-
-.design-card .card-body {
-  padding: 8px;
-}
-
-.see-more {
-  margin-bottom: 24px;
-}
-
-.see-more > a {
-  text-decoration: none;
-}
-
-.see-more > a:hover {
-  text-decoration: underline;
 }
 
 /* download resume button */
@@ -269,7 +292,10 @@ flex-grow: 1;
 /* code badges */
 .code-badges-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 50px)); /* Fixed badge width, responsive columns */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(75px, 75px)
+  ); /* Fixed badge width, responsive columns */
   gap: 24px;
   row-gap: 24px;
   margin-bottom: 24px;
@@ -280,36 +306,92 @@ flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: var(--text);
-  color: var(--bg-white);
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  background-color: var(--white-res);
+  border: 1px solid var(--black-res);
+  color: var(--text);
   font-weight: 500;
   border-radius: 5px;
 }
 
 .code-badge::before {
-  content: '';
+  content: "";
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border-radius: 5px;
-  background-color: var(--text);
+  background-color: var(--main-color);
   transform: translateX(-4px) translateY(4px);
   z-index: -1;
 }
 
 .code-badge.blue::before {
-  background-color: rgb(22, 179, 242);
+  background-color: var(--badge-blue);
 }
 
 .code-badge.red::before {
-  background-color: rgb(240, 72, 60);
+  background-color: var(--badge-red);
 }
 
-.code-badge.purple::before {
-  background-color: rgb(238, 173, 53);
+.code-badge.yellow::before {
+  background-color: var(--badge-yellow);
 }
+
+.code-badge.pink::before {
+  background-color: var(--badge-pink);
+}
+
+.code-badge.green::before {
+  background-color: var(--badge-green);
+}
+
+/* legend for code badges */
+.badges-legend-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.circle-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* spacing between each circle-text pair */
+}
+
+.circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* makes it a circle */
+  margin-right: 8px; /* spacing between circle and text */
+}
+
+.circle.blue {
+  background-color: var(--badge-blue);
+}
+
+.circle.red {
+  background-color: var(--badge-red);
+}
+
+.circle.pink {
+  background-color: var(--badge-pink);
+}
+
+.circle.green {
+  background-color: var(--badge-green);
+}
+
+.circle.yellow {
+  background-color: var(--badge-yellow);
+}
+
 
 /* about section */
 .social-wrapper {
@@ -320,7 +402,6 @@ flex-grow: 1;
 }
 
 .social-icon-wrapper {
-
   justify-content: center;
   align-items: center;
   text-align: center;

@@ -1,18 +1,26 @@
 d3.json("/resources/projects.json").then((data) => {
   // Filter design projects
-  const designProjects = data.filter(project => project.type === "design").slice(0, 3);
-  const sortedDesignProjects = designProjects.sort((a, b) => b.year - a.year);
-  generateCards(sortedDesignProjects, "#featured-design");
+
+  const sortedProjects = data.sort((a, b) => b.year - a.year);
+
+  const designProjects = data.filter((project) => project.type === "design");
+  const sortedDesignProjects = designProjects
+    .sort((a, b) => b.year - a.year)
+    .slice(0, 3);
+  generateCards(sortedDesignProjects, "#featured-design", "design");
 
   // Filter code projects
-  const codeProjects = data.filter(project => project.type === "code").slice(0, 3);
-  const sortedCodeProjects = codeProjects.sort((a, b) => b.year - a.year);
-  generateCards(sortedCodeProjects, "#featured-code");
+  const codeProjects = data.filter((project) => project.type === "code");
+  const sortedCodeProjects = codeProjects
+    .sort((a, b) => b.year - a.year)
+    .slice(0, 3);
+  generateCards(sortedCodeProjects, "#featured-code", "code");
 
+  generateCards(sortedProjects.slice(0,6), "#all-projects", "all");
   console.log("cards generated.");
 });
 
-function generateCards(projects, containerSelector) {
+function generateCards(projects, containerSelector, filter = null) {
   // Select the parent container where the cards will be appended
   const container = d3.select(containerSelector);
 
@@ -25,32 +33,46 @@ function generateCards(projects, containerSelector) {
       .attr("class", "design-card-link");
 
     // Create the card container
-    const card = cardLink
-      .append("div")
-      .attr("class", "design-card");
+    const card = cardLink.append("div").attr("class", "design-card");
 
     // Append the preview image
     card
       .append("div")
       .attr("class", "card-preview")
       .append("img")
-      .attr("src", `projects/${project["project-link"]}/images/${project.file_name}`);
+      .attr(
+        "src",
+        `projects/${project["project-link"]}/images/${project.file_name}`
+      );
 
     // Append the card body
     const cardBody = card.append("div").attr("class", "card-body");
 
     // Append the title
-    cardBody.append("h4").text(project.title);
+    cardBody.append("h4").attr("class", "homepage-card-title").text(project.title);
+    
+    //Add the tag
+    if (filter === "all") {
+      cardBody.append("div")
+      .attr("class", "tag")
+      .attr("data-tag", project.type)
+      .text(project.type);
+    }
 
     // Append the description
     cardBody.append("p").attr("class", "body-text").text(project.description);
+  
   });
 
-  // Add the "See more" link separately
-  container
-    .append("span")
-    .attr("class", "see-more")
-    .append("a")
-    .attr("href", "/projects")
-    .html("See more &RightArrow;");
+  if (filter === "all") {
+  } else {
+    container.append("span");
+        // Add the "See more" link separately
+        container
+        .append("span")
+        .attr("class", "see-more")
+        .append("a")
+        .attr("href", `/projects/?f=${filter}`)
+        .html("See more &RightArrow;");
+  }
 }

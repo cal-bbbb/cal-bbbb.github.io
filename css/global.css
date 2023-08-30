@@ -5,14 +5,15 @@
   --black-res: #000;
   --main-color: rgb(255, 98, 0);
   --alt-color: rgb(255, 0, 217);
-  --code: rgb(222, 15, 0);
-  --design: rgb(0, 63, 222);
+  --design: rgb(222, 15, 0);
+  --code: rgb(0, 63, 222);
   --photo: #efca10;
   --music: #8300ee;
   --resume: rgb(33, 119, 2);
   --badge-red: rgb(240, 72, 60);
   --badge-yellow: rgb(238, 173, 53);
   --badge-blue: rgb(22, 179, 242);
+  --badge-navy: rgb(22, 29, 242);
   --badge-orange: rgb(255, 98, 0);
   --badge-green: rgb(112, 188, 18);
   --badge-purple: rgb(143, 72, 209);
@@ -131,7 +132,7 @@ body.dark {
 /* page sections */
 
 .page-section {
-  padding: 0 20px;
+  padding-left: 10px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: row;
@@ -159,103 +160,6 @@ body.dark {
   margin: 10px auto;
   text-align: center;
   font-size: 9pt;
-}
-
-/* modal */
-/* The Modal (background) */
-.custom-modal {
-  display: none;
-  position: absolute; /* Position it absolutely */
-  z-index: 10; /* Sit on top */
-  left: 200px;
-  top: 0; /* Adjust this value to control the vertical position of the modal */
-  width: fit-content; /* Full width */
-}
-
-/* Modal Content/Box */
-.custom-modal-content {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  padding: 10px;
-  background-color: var(--main-color);
-  border-radius: 5px;
-  font-size: 12px;
-}
-
-.modal-text {
-  margin-top: 2px;
-  padding-right: 10px;
-}
-
-/* The Close Button */
-.custom-close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-  margin: 10px 0px 0 0;
-}
-
-.custom-close > span {
-  font-size: 20px;
-  transform: translateX(0px);
-}
-
-.custom-close:hover,
-.custom-close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* example cards */
-.design-card {
-  border-radius: 4px;
-  border: 1px solid var(--text);
-  display: flex;
-  flex-direction: row-reverse;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  min-width: 300px;
-  max-width: 400px;
-  margin: 12px 0;
-  padding: 0;
-}
-
-.design-card.dark {
-  border: 1px solid white;
-}
-
-.design-card:hover {
-  transform: translateX(-4px) translateY(-4px);
-  box-shadow: 4px 4px 0 var(--text);
-}
-
-.design-card-link {
-  text-decoration: none;
-}
-
-.card-preview > img {
-  width: 150px;
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-
-.design-card .card-body {
-  padding: 8px;
-}
-
-.see-more {
-  margin-bottom: 24px;
-}
-
-.see-more > a {
-  text-decoration: none;
-}
-
-.see-more > a:hover {
-  text-decoration: underline;
 }
 
 /* return to top button */

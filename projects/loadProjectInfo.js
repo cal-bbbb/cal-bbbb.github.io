@@ -1,6 +1,185 @@
 // Fetch the JSON data using D3
 const projectsDataPromise = d3.json("/resources/projects.json");
 
+function displayProjectLandingPage() {
+  const container = d3.select("#project-info");
+
+  // Use the existing structure of your index.html
+  let content = `
+    <div class="container-fluid">
+      <div class="page-section" id="projects">
+        <div class="page-section-title-wrapper container-fluid">
+          <h2 class="page-section-title">projects</h2>
+        </div>
+        <div class="container-fluid">
+          <div class="row project-section-wrapper">
+            <h3>latest</h3>
+            <div class="project-section" id="featured-projects">
+            </div>
+          </div>
+          <div class="row project-section-wrapper">
+            <h3>code</h3>
+            <div class="project-section" id="code-projects">
+            </div>
+            <h3>design</h3>
+            <div class="project-section" id="design-projects">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  container.html(content);
+
+  // Fetch the JSON data using D3
+  d3.json("/resources/projects.json").then((allProjects) => {
+    // Sort them by year to get the latest projects
+    const sortedProjects = allProjects.sort((a, b) => b.year - a.year);
+
+    // Populate the sections based on the type property
+    const sortedCodeProjects = sortedProjects.filter(
+      (project) => project.type === "code"
+    );
+    const sortedDesignProjects = sortedProjects.filter(
+      (project) => project.type === "design"
+    );
+    populateProjectsSection(sortedCodeProjects, "code-projects");
+    populateProjectsSection(sortedDesignProjects, "design-projects");
+
+    // Get the top 4 latest projects for the featured section
+    const featuredProjects = sortedProjects.slice(0, 4);
+    populateProjectsSection(featuredProjects, "featured-projects", true);
+  });
+}
+
+function displayProjectFilteredPage(filter) {
+  const container = d3.select("#project-info");
+
+  // Use the existing structure of your index.html
+  let content = `
+    <div class="container-fluid">
+      <div class="page-section" id="projects">
+        <div class="page-section-title-wrapper container-fluid">
+          <h2 class="page-section-title">projects</h2>
+        </div>
+        <div class="container-fluid">
+          <div class="row fproject-section-wrapper">
+            <a class="filter-title-link" href="/projects">  
+              <div class="filter-title-wrapper">
+                <div class="filter-title-tag" data-tag="${filter}">
+                  <h3>
+                    ${filter}
+                    <i class="fa-solid fa-xmark" style="padding-left: 5px;"></i>
+                  </h3>
+                </div>
+              </div>
+            </a>
+            <div class="project-section" id="filter-projects">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  container.html(content);
+
+  // Fetch the JSON data using D3
+  d3.json("/resources/projects.json").then((allProjects) => {
+    // Sort them by year to get the latest projects
+    const sortedProjects = allProjects.sort((a, b) => b.year - a.year);
+    // Populate the sections based on the type property
+    const sortedCodeProjects = sortedProjects.filter(
+      (project) => project.type === "code"
+    );
+    const sortedDesignProjects = sortedProjects.filter(
+      (project) => project.type === "design"
+    );
+    // Get the top 4 latest projects for the featured section
+    const featuredProjects = sortedProjects.slice(0, 3);
+
+    if (filter === "all") {
+      populateProjectsSection(sortedProjects, "filter-projects");
+    } else if (filter === "code") {
+      populateProjectsSection(sortedCodeProjects, "filter-projects");
+    } else if (filter === "design") {
+      populateProjectsSection(sortedDesignProjects, "filter-projects");
+    } else if (filter === "latest") {
+      populateProjectsSection(featuredProjects, "filter-projects", true);
+    }
+  });
+}
+
+function populateProjectsSection(data, sectionId, isFeatured = false) {
+  const section = d3.select(`#${sectionId}`);
+
+  data.forEach((project) => {
+    // Create an anchor element for the project link
+    const projectLink = section
+      .append("a")
+      .attr("class", "project-card-link")
+      .attr("href", `/projects/?p=${project.id}`); // Updated link format
+
+    const projectCard = projectLink
+      .append("div")
+      .attr("class", isFeatured ? "project-card featured" : "project-card");
+
+    // Add project image on top (if exists)
+    if (project.file_name) {
+      projectCard
+        .append("div")
+        .attr("class", "project-card-preview")
+        .append("img")
+        .attr(
+          "src",
+          `/projects/${project["project-link"]}/images/${project.file_name}`
+        );
+    }
+    // Card content container with the body-text class
+    const cardContent = projectCard
+      .append("div")
+      .attr("class", "project-card-content");
+
+    // Add project title and description on the bottom
+    cardContent
+      .append("h4")
+      .attr("class", "project-card-title")
+      .text(project.title);
+
+    cardContent
+      .append("div")
+      .attr("class", "project-card-description")
+      .append("p")
+      .attr("class", "body-text")
+      .text(
+        project.description.substring(0, 85) +
+          (project.description.length > 85 ? "..." : "")
+      );
+
+    const tagsDiv = cardContent.append("div").attr("class", "tags-container");
+
+    // Prepend the project type as the first tag
+    tagsDiv
+      .append("div")
+      .attr("class", "tag")
+      .attr("data-tag", project.type)
+      .text(project.type);
+
+    const tagsLength = project.tags.length;
+
+    // Add tags (if exists)
+    if (project.tags && project.tags.length) {
+      // Placeholder tag
+      tagsDiv
+        .append("div")
+        .attr("class", "tag placeholder")
+        .attr("data-tag", "placeholder")
+        .text(`+${tagsLength} more`);
+    }
+  });
+}
+
 function getProjectByLink(data, projectLink) {
   return data.find((project) => project["project-link"] === projectLink);
 }
@@ -68,13 +247,20 @@ function displayProjectInfoWithD3(data, projectLink) {
           `/projects/${projectInfo["project-link"]}/images/${projectInfo.file_name_full}`
         )
         .attr("class", "proj-preview-image")
-        .attr("style", "aspect-ratio: 1; width: 100%; border: 1px solid var(--text)");
     }
 
     // Append tags
     const tagsContainer = descriptionContainer
       .append("div")
       .attr("class", "tags-container");
+
+    // Prepend the project type as the first tag
+    tagsContainer
+      .append("div")
+      .attr("class", "tag")
+      .attr("data-tag", projectInfo.type)
+      .text(projectInfo.type);
+
     projectInfo.tags.forEach((tag) => {
       tagsContainer
         .append("div")
@@ -90,7 +276,7 @@ function displayProjectInfoWithD3(data, projectLink) {
     if (projectInfo.content) {
       descriptionContainer.append("div").html(projectInfo.content);
     } else {
-      descriptionContainer.append("p").text(projectInfo.description);
+      descriptionContainer.append("p").attr("style", "font-size: 14pt; line-height: 1.4;").text(projectInfo.description);
     }
 
     //Add content
@@ -102,6 +288,8 @@ function displayProjectInfoWithD3(data, projectLink) {
 
     // Update the year in the page-section-title
     d3.select("#project-year").text(projectInfo.year);
+
+    setupImageModal();
   } else {
     const container = d3.select("#project-info");
 
@@ -109,6 +297,16 @@ function displayProjectInfoWithD3(data, projectLink) {
     container.html("");
     console.error("Project not found for link:", projectLink);
   }
+
+  window.addEventListener("keydown", function (event) {
+    // Check if the pressed key is an arrow key
+    if (
+      ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"].includes(event.key)
+    ) {
+      // Prevent the default behavior (scrolling)
+      event.preventDefault();
+    }
+  });
 }
 
 function displayProjectInfoById(data, projectId) {
@@ -125,125 +323,43 @@ function displayProjectInfoById(data, projectId) {
   }
 }
 
-function displayProjectLandingPage() {
-  const container = d3.select("#project-info");
+function setupImageModal() {
+  const modal = d3.select("#myModal");
+  const modalImg = d3.select("#img01");
+  const captionText = d3.select("#caption");
+  const close = d3.select(".close");
 
-  // Use the existing structure of your index.html
-  let content = `
-    <div class="container-fluid">
-      <div class="page-section" id="about">
-        <div class="page-section-title-wrapper container-fluid">
-          <h2 class="page-section-title">projects</h2>
-        </div>
-        <div class="container-fluid main-content">
-          <div class="row project-section-wrapper">
-            <h3>latest</h3>
-            <div class="project-section" id="featured-projects">
-            </div>
-          </div>
-          <div class="row project-section-wrapper">
-            <h3>code</h3>
-            <div class="project-section" id="code-projects">
-            </div>
-            <h3>design</h3>
-            <div class="project-section" id="design-projects">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  container.html(content);
-
-  // Fetch the JSON data using D3
-  d3.json("/resources/projects.json").then((allProjects) => {
-    // Sort them by year to get the latest projects
-    const sortedProjects = allProjects.sort((a, b) => b.year - a.year);
-
-    // Populate the sections based on the type property
-    const sortedCodeProjects = sortedProjects.filter(
-      (project) => project.type === "code"
-    );
-    const sortedDesignProjects = sortedProjects.filter(
-      (project) => project.type === "design"
-    );
-    populateProjectsSection(sortedCodeProjects, "code-projects");
-    populateProjectsSection(sortedDesignProjects, "design-projects");
-
-    // Get the top 4 latest projects for the featured section
-    const featuredProjects = sortedProjects.slice(0, 4);
-    populateProjectsSection(featuredProjects, "featured-projects", true);
+  d3.selectAll(".project-page-image").on("click", function() {
+    console.log("Image clicked");  // This should log when an image is clicked
+    const img = d3.select(this);
+    modal.style("display", "block");
+    modalImg.attr("src", img.attr("src"));
+    captionText.text(img.attr("alt"));
   });
-}
 
-function populateProjectsSection(data, sectionId, isFeatured = false) {
-  const section = d3.select(`#${sectionId}`);
+  d3.selectAll(".proj-preview-image").on("click", function() {
+    console.log("Image clicked");  // This should log when an image is clicked
+    const img = d3.select(this);
+    modal.style("display", "block");
+    modalImg.attr("src", img.attr("src"));
+    captionText.text(img.attr("alt"));
+  });
 
-  data.forEach((project) => {
-    // Create an anchor element for the project link
-    const projectLink = section
-      .append("a")
-      .attr("class", "project-card-link")
-      .attr("href", `/projects/?p=${project.id}`); // Updated link format
-
-    const projectCard = projectLink
-      .append("div")
-      .attr("class", isFeatured ? "project-card featured" : "project-card");
-
-    // Add project image on top (if exists)
-    if (project.file_name) {
-      projectCard
-        .append("div")
-        .attr("class", "project-card-preview")
-        .append("img")
-        .attr(
-          "src",
-          `/projects/${project["project-link"]}/images/${project.file_name}`
-        );
-    }
-    // Card content container with the body-text class
-    const cardContent = projectCard
-      .append("div")
-      .attr("class", "project-card-content");
-
-    // Add project title and description on the bottom
-    cardContent
-      .append("h4")
-      .attr("class", "project-card-title")
-      .text(project.title);
-      
-    cardContent
-    .append("div")
-    .attr("class", "project-card-description")
-    .append("p")
-      .attr("class", "body-text")
-      .text(
-        project.description.substring(0, 85) +
-          (project.description.length > 85 ? "..." : "")
-      );
-
-    // Add tags (if exists)
-    if (project.tags && project.tags.length) {
-      const tagsDiv = cardContent.append("div").attr("class", "tags-container");
-      project.tags.forEach((tag) => {
-        tagsDiv
-          .append("div")
-          .attr("class", "tag")
-          .attr("data-tag", tag)
-          .text(tag);
-      });
-    }
+  close.on("click", function() {
+    modal.style("display", "none");
   });
 }
 
 function externalProjectCall(requestedProject) {
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get("p");
+  const filter = urlParams.get("f");
 
   projectsDataPromise.then((data) => {
     if (projectId) {
       displayProjectInfoById(data, projectId);
+    } else if (filter) {
+      displayProjectFilteredPage(filter);
     } else if (requestedProject) {
       displayProjectInfoWithD3(data, requestedProject);
     } else {

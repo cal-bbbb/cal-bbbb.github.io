@@ -60,23 +60,23 @@
 }
 
 #path1 {
-  animation: draw 0.75s forwards;
-}
-
-#path2 {
   animation: draw 0.75s forwards .4s;
 }
 
-#path3 {
-  animation: draw 0.75s forwards 0.8s;
+#path2 {
+  animation: draw 0.75s forwards .8s;
 }
 
-#path4 {
+#path3 {
   animation: draw 0.75s forwards 1.2s;
 }
 
+#path4 {
+  animation: draw 0.75s forwards 1.6s;
+}
+
 #path5 {
-  animation: draw 0.75s forwards 2s;
+  animation: draw 0.75s forwards 2.4s;
 }
 
 
@@ -196,7 +196,7 @@
 }
 
 
-@media (max-width: 960px) {
+@media (max-width: 992px) {
   .menu li,
   .menu-item a {
     color: var(--text);
@@ -211,7 +211,7 @@
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 992px) {
   .toggle {
     display: none;
   }

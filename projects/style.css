@@ -1,5 +1,16 @@
 /* code previews */
-iframe {
+.game-widget {
+  position: relative;
+  border: 1px solid var(--black-res);
+  border-radius: 16px;
+  padding-bottom: 75%; /* This value determines the aspect ratio */
+  height: 0;
+  background-color: var(--white-res);
+  box-shadow: -4px 4px 0 var(--black-res);
+  overflow: hidden; /* hide the parts of the iframe that are outside the container */
+}
+
+.game-widget iframe {
   border-radius: 32px;
   padding: 20px;
   position: absolute;
@@ -7,26 +18,39 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  /* This ensures that content doesn't spill outside the iframe if it's larger than the iframe dimensions */
+  overflow: hidden; /* This ensures that content doesn't spill outside the iframe if it's larger than the iframe dimensions */
+  transform-origin: 0 0; /* scale from top-left corner */
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  width: 125%;
+  height: 125%;
 }
 
-.game-widget {
-  position: relative;
-  border: 1px solid var(--black-res);
-  border-radius: 16px;
-  padding-bottom: 75%;
-  /* This value determines the aspect ratio */
-  height: 0;
-  background-color: var(--white-res);
-  box-shadow: -4px 4px 0 var(--black-res);
-  /* This is a maybe. */
+/* Responsive Scaling */
+@media (max-width: 1280px) {
+  .game-widget iframe {
+    -webkit-transform: scale(0.6666);
+    transform: scale(0.6666);
+    width: 150% !important;
+    height: 150% !important;
+  }
+}
+
+/* Responsive Scaling */
+@media (max-width: 992px) {
+  .game-widget iframe {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    width: 200% !important;
+    height: 200% !important;
+  }
 }
 
 /*project pages */
 .proj-preview-frame {
-  margin: 0 auto;
-  @media (max-width: 960px) {
+  width: 100%;
+  height: auto;
+  @media (max-width: 992px) {
     width: fit-content;
     margin-bottom: 24px;
   }
@@ -34,15 +58,44 @@ iframe {
 
 .proj-preview-image {
   border-radius: 8px;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--text);
 
-  @media (max-width: 960px) {
+  @media (max-width: 992px) {
     max-width: 250px;
   }
+}
+
+.project-image-row {
+  display: flex;        /* Use Flexbox layout */
+  justify-content: space-between; /* Distribute the images evenly with space in between */
+  align-items: center;  /* Vertically center the images */
+}
+
+.grid-image-2 {
+  flex: 1;              /* Each image will take up an equal amount of space */
+  max-width: calc(50% - 8px); /* Minus 10px or any other value for some spacing between images */
+}
+
+.grid-image-3 {
+  flex: 1;              /* Each image will take up an equal amount of space */
+  max-width: calc(33.33% - 8px); /* Minus 10px or any other value for some spacing between images */
 }
 
 .project-page-image {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  border: 1px solid var(--text);
+  border-radius: 12px;
+  box-shadow: -4px 4px 0 var(--text);
+  margin-bottom: 18px;
+}
+
+.project-page-pdf {
+  width: 100%;
+  min-height: 650px;
   object-fit: cover;
   border: 1px solid var(--text);
   border-radius: 12px;
@@ -58,10 +111,102 @@ iframe {
   margin-bottom: 18px;
 }
 
+.filter-title-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.filter-title-link {
+  text-decoration: none;
+}
+
+.filter-title-tag {
+  text-decoration: none;
+  background-color: #333;
+  /* change to your preferred color */
+  border-radius: 50px;
+  padding: 8px 16px;
+  /* space inside the tag */
+  color: var(--text);
+  /* text color */
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-title-tag[data-tag="code"] {
+  background-color: var(--badge-blue);
+}
+
+.filter-title-tag[data-tag="design"] {
+  background-color: var(--badge-red);
+}
+
+
+.filter-title-tag[data-tag="all"] {
+  background-color: var(--badge-green);
+  /* change to your preferred color for this specific tag */
+}
+
+.filter-title-tag[data-tag="latest"] {
+  background-color: var(--badge-yellow);
+}
+
+.filter-title-tag h3 {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.filter-title-tag i {
+  display: none;
+  transform: translateY(1px);
+  color: var(--text);
+}
+
+.filter-title-tag:hover i {
+  display: inline-flex;
+}
+
+/* download button */
+.project-button {
+  width: fit-content;
+  border: 1px solid var(--text);
+  outline: none;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0);
+  color: inherit;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-button > * {
+  transition: all 0.3s ease-in-out;
+}
+
+.project-button:hover {
+  box-shadow: inset 4px 4px 0 var(--text);
+}
+
+.project-button-text {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.project-button:hover > * {
+  transform: translateX(2px) translateY(2px);
+  color: var(--text);
+}
+
 /* projects cards */
 .project-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, 250px);
   /* This will create columns that are exactly 200px wide */
   gap: 16px;
   /* Adjust this value for spacing between grid items */
@@ -81,22 +226,23 @@ iframe {
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
-  width: 200px;
+  width: 250px;
   /* Set max width */
   height: 400px;
 }
 
 .project-card:hover {
-  transform: translateX(-4px) translateY(-4px);
-  box-shadow: 4px 4px 0 var(--text);
+  transform: translateX(4px) translateY(-4px);
+  box-shadow: -4px 4px 0 var(--text);
   color: var(--main-color);
 }
 
 .project-card-preview {
+  border-bottom: 1px solid var(--text);
 }
 
 .project-card-preview > img {
-  width: 200px;
+  width: 250px;
   aspect-ratio: 1;
   object-fit: cover;
 }
@@ -117,7 +263,7 @@ iframe {
 }
 
 .project-card-title {
-  width: 160px;
+  width: 230px;
   /* Fixed width */
   white-space: nowrap;
   /* Prevent text from wrapping */
@@ -147,59 +293,75 @@ iframe {
   /* adjust as needed */
 }
 
+.tag[data-tag="placeholder"] {
+  background-color: #aaa;
+}
+
+.tag[data-tag="code"] {
+  background-color: var(--badge-blue);
+  /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="design"] {
+  background-color: var(--badge-red);
+  /* change to your preferred color for this specific tag */
+}
+
 /* If you want different colors for different tags, you can add more styles like this */
 .tag[data-tag="Full Stack"] {
-  background: rgb(22, 179, 242);
+  background: rgb(22, 29, 242);
   background: linear-gradient(
-    90deg,
-    rgba(22, 179, 242, 1) 28%,
-    rgba(84, 0, 176, 0.75) 50%,
-    rgba(240, 72, 60, 1) 72%
+    120deg,
+    rgba(0, 125, 10, 0.9) 9%,
+    rgb(22, 29, 242) 28%,
+    rgba(84, 0, 176, 0.75) 45%,
+    rgba(240, 72, 60, 1) 68%,
+    rgb(242, 188, 10) 95%
   );
 }
 
 .tag[data-tag="React"] {
-  background-color: var(--badge-red);
+  background-color: var(--badge-navy);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="JS"] {
-  background-color: var(--badge-red);
+  background-color: var(--badge-navy);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="D3.js"] {
-  background-color: var(--badge-red);
+  background-color: var(--badge-navy);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="HTML"] {
-  background-color: var(--badge-blue);
+  background-color: var(--badge-green);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="CSS"] {
-  background-color: var(--badge-blue);
+  background-color: var(--badge-green);
   /* change to your preferred color for this specific tag */
 }
 
-.tag[data-tag="UI/UX Design"] {
-  background-color: var(--badge-blue);
+.tag[data-tag="Web Design"] {
+  background-color: var(--badge-green);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="Concept"] {
-  background-color: var(--badge-purple);
+  background-color: var(--badge-pink);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="Marketing"] {
-  background-color: var(--badge-pink);
+  background-color: var(--badge-purple);
   /* change to your preferred color for this specific tag */
 }
 
 .tag[data-tag="Campaign"] {
-  background-color: var(--badge-pink);
+  background-color: var(--badge-purple);
   /* change to your preferred color for this specific tag */
 }
 
@@ -208,12 +370,83 @@ iframe {
   /* change to your preferred color for this specific tag */
 }
 
-.tag[data-tag="Marketing"] {
+.tag[data-tag="Logos"] {
   background-color: var(--badge-yellow);
   /* change to your preferred color for this specific tag */
 }
 
-.tag[data-tag="Logos"] {
+.tag[data-tag="Game Design"] {
   background-color: var(--badge-orange);
   /* change to your preferred color for this specific tag */
+}
+
+.tag[data-tag="Product Design"] {
+  background-color: var(--badge-orange);
+  /* change to your preferred color for this specific tag */
+}
+
+
+/* full screen image modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  height: auto;
+  text-align: center;
+  color: #ccc;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--black-res);
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--main-color);
+  text-decoration: none;
+  cursor: pointer;
 }

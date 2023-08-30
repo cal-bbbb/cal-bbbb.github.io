@@ -1,4 +1,5 @@
-{
+[
+  {
     "id": "0008",
     "title": "Circlas",
     "description": "A game of comraderie, competitorship, absurdity, and getting absolutely hammered.",
@@ -14,4 +15,20 @@
       "Logos",
       "Typography"
     ]
+  },
+  {
+    "id": "0009",
+    "title": "",
+    "description": "",
+    "content": "",
+    "page_content": "",
+    "year": "",
+    "type": "",
+    "file_name": "",
+    "project-link": "",
+    "tags": [
+      "Graphic Design",
+      "Typography"
+    ]
   }
+]

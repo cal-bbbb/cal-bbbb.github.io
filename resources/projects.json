@@ -1,7 +1,7 @@
 [
   {
     "id": "0000",
-    "title": "Pokémon knockoff",
+    "title": "Pokémon Map Gen. Demo",
     "description": "An example of map generation, sprite generation, and simple game mechanics with D3.js.",
     "content": "<p>This project was from a course during university called Creative Coding. The coursework was primarily around the use of D3.js, focusing on both its vast utility and DOM manipulation. <br /><br />This assignment was to build a simple game that had listeners for user inputs. Naturally I took this as a challenge to replicate one of my all-time favorite video games: Pokémon.</p>",
     "page_content": "<div class='game-widget'><iframe src='/projects/pokemon-knockoff/game/index.html' frameborder='0'></iframe></div>",

@@ -1,0 +1,7 @@
+{
+    "code": ["HTML", "CSS", "JS", "TS", "Next.js", "React", "Redux", "React-router", "Tailwind",  "Java", "Lua", "Python", "Batch Scripting", "XML", "GitHub"],
+    "analytics": ["SQL", "Google Analytics", "Google BigQuery", "Google Looker", "Google Apps Script", "Visier", "Excel"],
+    "management": ["ChatGPT", "Microsoft Office", "Google Suite", "Salesforce", "JIRA", "Asana",  "Notion"],
+    "design": ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Figma", "Canva"],
+    "audio/video": ["Adobe Premiere Pro", "Adobe After Effects", "Davinci Resolve", "Logic Pro X", "FL Studio", "Adobe Audition"]
+}

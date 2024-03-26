@@ -314,6 +314,7 @@
   color: var(--text);
   font-weight: 500;
   border-radius: 5px;
+  padding: 1px;
 }
 
 .code-badge::before {

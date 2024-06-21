@@ -82,6 +82,50 @@ h4 {
   }
 }
 
+@media (min-width: 972px) {
+  .tp-lg-1 {
+    padding-top: 10%;
+  }
+
+  .tp-lg-2 {
+    padding-top: 20%;
+  }
+
+  .tp-lg-3 {
+    padding-top: 30%;
+  }
+
+  .tp-lg-4 {
+    padding-top: 40%;
+  }
+
+  .tp-lg-5 {
+    padding-top: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tp-xl-1 {
+    padding-top: 10%;
+  }
+
+  .tp-xl-2 {
+    padding-top: 20%;
+  }
+
+  .tp-xl-3 {
+    padding-top: 30%;
+  }
+
+  .tp-xl-4 {
+    padding-top: 40%;
+  }
+
+  .tp-xl-5 {
+    padding-top: 50%;
+  }
+}
+
 /* DARK MODE STYLES */
 body.dark {
   background-color: #0a0500;

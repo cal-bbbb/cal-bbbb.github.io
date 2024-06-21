@@ -1,238 +1,274 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-L9H7G3NVYJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9H7G3NVYJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+      gtag("config", "G-L9H7G3NVYJ");
+    </script>
 
-    gtag("config", "G-L9H7G3NVYJ");
-  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/c233f11456.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <script src="https://kit.fontawesome.com/c233f11456.js" crossorigin="anonymous"></script>
+    <!-- global content -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="icon" href="/resources/favicon.ico" type="image/x-icon" />
 
-  <!-- global content -->
-  <link rel="stylesheet" href="/css/global.css" />
-  <link rel="stylesheet" href="/css/nav.css" />
-  <link rel="icon" href="/resources/favicon.ico" type="image/x-icon" />
+    <!-- page-specific -->
+    <title>CAL B. | home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-  <!-- page-specific -->
-  <title>CAL B. | home</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
+  <body>
+    <div class="body-wrapper d-flex flex-column">
+      <!-- return to top button -->
+      <button onclick="topFunction()" id="return-to-top" title="Go to top">
+        Top
+      </button>
 
-<body>
-  <div class="body-wrapper d-flex flex-column">
-    <!-- return to top button -->
-    <button onclick="topFunction()" id="return-to-top" title="Go to top">
-      Top
-    </button>
+      <!-- Navigation via d3 -->
+      <div class="nav-wrapper"></div>
 
-    <!-- Navigation via d3 -->
-    <div class="nav-wrapper"></div>
-
-    <!-- Main Content -->
-    <main class="content-container container-fluid" id="top">
-      <div class="container-fluid">
-        <div class="page-section" id="tldr">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">tl;dr</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="col-xl-10">
-              <span class="body-text">Hello there! I'm Calum Boone and</span>
-              <h3 class="about-big-text">
-                I am a
-                <a href="#design" class="design-color about-big-text-hover">
-                  web/graphic designer</a>
-                /
-                <a href="#code" class="code-color about-big-text-hover">front-end developer</a>
-                /
-                <a href="#music" class="music-color about-big-text-hover">musician</a>
-                /
-                <a href="#photo" class="resume-color about-big-text-hover">
-                  photographer</a>
-                /
-                <span style="font-size: 24pt">
-                  <a href="#contact" class="resume-color about-big-text-hover">analyst</a>
+      <!-- Main Content -->
+      <main class="content-container container-fluid" id="top">
+        <div class="container-fluid">
+          <div class="page-section" id="tldr">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">tl;dr</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="col-xl-10">
+                <span class="body-text">Hello there! I'm Calum Boone and</span>
+                <h3 class="about-big-text">
+                  I am a(n)
+                  <a href="#about" class="resume-color about-big-text-hover"
+                    >analyst</a
+                  >
                   /
-                  <a href="#contact" class="resume-color about-big-text-hover">project coordinator</a>
+                  <a href="#design" class="design-color about-big-text-hover">
+                    web/graphic designer</a
+                  >
                   /
-                  <a href="#contact" class="resume-color about-big-text-hover">consultant</a>
+                  <a href="#code" class="code-color about-big-text-hover"
+                    >front-end developer</a
+                  >
                   /
-                  <a href="#contact" class="resume-color about-big-text-hover">social media manager</a>
-                  / </span><span style="font-size: 18pt">
-                  <a href="#contact" class="resume-color about-big-text-hover">
-                    problem solver</a>
+                  <a href="#music" class="music-color about-big-text-hover"
+                    >musician</a
+                  >
                   /
-                  <a href="#contact" class="resume-color about-big-text-hover">innovator</a>
-                  /
-                  <a href="#contact" class="resume-color about-big-text-hover">critical thinker</a>
-                  /
-                  <a href="#contact" class="resume-color about-big-text-hover">coordinator</a>
-                  /
-                  <a href="#contact" class="resume-color about-big-text-hover">team player...</a>
-                </span>
-              </h3>
+                  <span style="font-size: 24pt">
+                    <a href="#photo" class="resume-color about-big-text-hover">
+                      photographer</a
+                    >
+                    /
+                    <a href="#contact" class="resume-color about-big-text-hover"
+                      >project coordinator</a
+                    >
+                    /
+                    <a href="#contact" class="resume-color about-big-text-hover"
+                      >social media manager</a
+                    >
+                    / </span
+                  ><span style="font-size: 18pt">
+                    <a
+                      href="#contact"
+                      class="resume-color about-big-text-hover"
+                    >
+                      problem solver</a
+                    >
+                    /
+                    <a href="#contact" class="resume-color about-big-text-hover"
+                      >innovator</a
+                    >
+                    /
+                    <a href="#contact" class="resume-color about-big-text-hover"
+                      >critical thinker</a
+                    >
+                    /
+                    <a href="#contact" class="resume-color about-big-text-hover"
+                      >coordinator</a
+                    >
+                    /
+                    <a href="#contact" class="resume-color about-big-text-hover"
+                      >team player...</a
+                    >
+                  </span>
+                </h3>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="page-section" id="about">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">about</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="row body-text">
-              <div class="col-xl-4 col-md-8">
-                <p>
-                  My passion for design started at a young age, creating
-                  conceptual product designs, starting apparel companies, and
-                  learning the ways of the force (Photoshop). My curiousity
-                  led me to study design at
-                  <a href="/about/#education-skills">Northeastern University</a>
-                  to further hone my skills as a design Jedi. <br /><br />
-                  I also have an innate passion for code, which led me to dive
-                  into the basics of web development. As a kid, I had a blast
-                  designing and building various websites while learning to
-                  code as well. By 13, I was building the high school robotics
-                  team's website, complete with a functional PHP & SQL
-                  back-end for the CMS.
-                  <br /><br />
-                  Nowadays? I spend my time building projects and products of
-                  all types. I know I left some links to them somewhere around
-                  here...
-                </p>
-              </div>
-              <div class="col-xl-6 col-lg-12 col-md-8">
-                <h3>skills</h3>
-                <div class="code-badges-wrapper" id="skills-wrapper"></div>
-
-                <!-- reenable -->
-                <div class="code-badges-wrapper d-none">
-                  <div class="code-badge blue">HTML</div>
-                  <div class="code-badge blue">CSS</div>
-                  <div class="code-badge blue">JS</div>
-                  <div class="code-badge blue">TS</div>
-                  <div class="code-badge blue">React</div>
-                  <div class="code-badge blue">D3.js</div>
-                  <div class="code-badge blue">Java</div>
-                  <div class="code-badge blue">SQL</div>
-                  <div class="code-badge green">Google<br />Analytics</div>
-                  <div class="code-badge green">Google<br />BigQuery</div>
-                  <div class="code-badge green">Google<br />Looker</div>
-                  <div class="code-badge green">
-                    Google<br />Apps<br />Script
-                  </div>
-                  <div class="code-badge green">Visier</div>
-                  <div class="code-badge green">Excel</div>
-                  <div class="code-badge pink">
-                    Microsoft<br />Office<br />Suite
-                  </div>
-                  <div class="code-badge pink">Google<br />Suite</div>
-                  <div class="code-badge pink">Salesforce</div>
-                  <div class="code-badge pink">JIRA</div>
-                  <div class="code-badge pink">Joomla</div>
-                  <div class="code-badge pink">Asana</div>
-                  <div class="code-badge pink">GitHub</div>
-                  <div class="code-badge pink">Notion</div>
-                  <div class="code-badge red">Adobe<br />Illustrator</div>
-                  <div class="code-badge red">Adobe<br />Photoshop</div>
-                  <div class="code-badge red">Adobe<br />InDesign</div>
-                  <div class="code-badge red">Figma</div>
-                  <div class="code-badge red">Canva</div>
-                  <div class="code-badge yellow">
-                    Adobe<br />Premiere<br />Pro
-                  </div>
-                  <div class="code-badge yellow">
-                    Adobe<br />After<br />Effects
-                  </div>
-                  <div class="code-badge yellow">Davinci<br />Resolve</div>
-                  <div class="code-badge yellow">Logic<br />Pro X</div>
-                  <div class="code-badge yellow">FL<br />Studio</div>
+          <div class="page-section" id="about">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">about</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-xl-4 col-md-8">
+                  <p>
+                    Welcome to my site. I've always been passionate about the
+                    way things were designed. I first started with website
+                    design. I loved being able to manipulate the foundations of
+                    what I was shown on my screen. I also started playing around with making music, which I fell in love with immediately. I was hungry to understand what made a good song, a good website, a good story. My curiousity led me to study
+                    business and design at
+                    <a href="/about/#education-skills"
+                      >Northeastern University</a
+                    >
+                    with a concentration in marketing. <br /><br />
+                    Currently, I'm working on
+                    <a href="/projects/?p=0003">Soundsteer</a>, an AI-enhanced
+                    digital management platform targeted towards independent
+                    artists that allows them to create social campaigns, track
+                    their progress, submit to playlists, and more. <br /><br />
+                    Before that? I spent my time building projects and products
+                    of all types. I know I left some links to them somewhere
+                    around here...
+                  </p>
                 </div>
-                <div class="badges-legend-container">
-                  <div class="circle-item">
-                    <span class="circle blue"></span>
-                    <span class="circle-text">code</span>
-                  </div>
-                  <div class="circle-item">
-                    <span class="circle green"></span>
-                    <span class="circle-text">analytics</span>
-                  </div>
+                <div class="col-xl-6 col-lg-12 col-md-8">
+                  <h3>skills</h3>
+                  <div class="code-badges-wrapper" id="skills-wrapper"></div>
 
-                  <div class="circle-item">
-                    <span class="circle pink"></span>
-                    <span class="circle-text">management</span>
+                  <!-- reenable -->
+                  <div class="code-badges-wrapper d-none">
+                    <div class="code-badge blue">HTML</div>
+                    <div class="code-badge blue">CSS</div>
+                    <div class="code-badge blue">JS</div>
+                    <div class="code-badge blue">TS</div>
+                    <div class="code-badge blue">React</div>
+                    <div class="code-badge blue">D3.js</div>
+                    <div class="code-badge blue">Java</div>
+                    <div class="code-badge blue">SQL</div>
+                    <div class="code-badge green">Google<br />Analytics</div>
+                    <div class="code-badge green">Google<br />BigQuery</div>
+                    <div class="code-badge green">Google<br />Looker</div>
+                    <div class="code-badge green">
+                      Google<br />Apps<br />Script
+                    </div>
+                    <div class="code-badge green">Visier</div>
+                    <div class="code-badge green">Excel</div>
+                    <div class="code-badge pink">
+                      Microsoft<br />Office<br />Suite
+                    </div>
+                    <div class="code-badge pink">Google<br />Suite</div>
+                    <div class="code-badge pink">Salesforce</div>
+                    <div class="code-badge pink">JIRA</div>
+                    <div class="code-badge pink">Joomla</div>
+                    <div class="code-badge pink">Asana</div>
+                    <div class="code-badge pink">GitHub</div>
+                    <div class="code-badge pink">Notion</div>
+                    <div class="code-badge red">Adobe<br />Illustrator</div>
+                    <div class="code-badge red">Adobe<br />Photoshop</div>
+                    <div class="code-badge red">Adobe<br />InDesign</div>
+                    <div class="code-badge red">Figma</div>
+                    <div class="code-badge red">Canva</div>
+                    <div class="code-badge yellow">
+                      Adobe<br />Premiere<br />Pro
+                    </div>
+                    <div class="code-badge yellow">
+                      Adobe<br />After<br />Effects
+                    </div>
+                    <div class="code-badge yellow">Davinci<br />Resolve</div>
+                    <div class="code-badge yellow">Logic<br />Pro X</div>
+                    <div class="code-badge yellow">FL<br />Studio</div>
                   </div>
-                  <div class="circle-item">
-                    <span class="circle red"></span>
-                    <span class="circle-text">design</span>
-                  </div>
-                  <div class="circle-item">
-                    <span class="circle yellow"></span>
-                    <span class="circle-text">audio/video</span>
+                  <div class="badges-legend-container">
+                    <div class="circle-item">
+                      <span class="circle blue"></span>
+                      <span class="circle-text">code</span>
+                    </div>
+                    <div class="circle-item">
+                      <span class="circle green"></span>
+                      <span class="circle-text">analytics</span>
+                    </div>
+
+                    <div class="circle-item">
+                      <span class="circle pink"></span>
+                      <span class="circle-text">management</span>
+                    </div>
+                    <div class="circle-item">
+                      <span class="circle red"></span>
+                      <span class="circle-text">design</span>
+                    </div>
+                    <div class="circle-item">
+                      <span class="circle yellow"></span>
+                      <span class="circle-text">audio/video</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="page-section" id="featured">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">featured</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="row body-text">
-              <div class="col-xl-6 col-lg-12" id="featured-code">
-                <h3 id="code">code</h3>
-              </div>
-              <div class="col-xl-6 col-lg-12" id="featured-design">
-                <h3 id="design">design</h3>
+          <div class="page-section" id="featured">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">featured</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-xl-6 col-lg-12" id="featured-code">
+                  <h3 id="code">code</h3>
+                </div>
+                <div class="col-xl-6 col-lg-12" id="featured-design">
+                  <h3 id="design">design</h3>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="page-section" id="projects">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">projects</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="row body-text">
-              <div class="col-12">
-                <h3>latest</h3>
-                <div id="all-projects"></div>
-                <span class="see-more">
-                  <a href="/projects/?f=all">See more &rightarrow;</a>
-                </span>
+          <div class="page-section" id="projects">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">projects</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-12">
+                  <h3>latest</h3>
+                  <div id="all-projects"></div>
+                  <span class="see-more">
+                    <a href="/projects/?f=all">See more &rightarrow;</a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- Photo section -->
-        <div class="page-section" id="photo">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">photo</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <h3>more coming soon...</h3>
-            <div id="ig-embed">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
-                data-instgrm-version="14" style="
+          <!-- Photo section -->
+          <div class="page-section" id="photo">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">photo</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <h3>more coming soon...</h3>
+              <div id="ig-embed">
+                <blockquote
+                  class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  data-instgrm-version="14"
+                  style="
                     background: #fff;
                     border: 0;
                     border-radius: 3px;
@@ -245,101 +281,138 @@
                     width: 99.375%;
                     width: -webkit-calc(100% - 2px);
                     width: calc(100% - 2px);
-                  ">
-                <div style="padding: 16px">
-                  <a href="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    style="
+                  "
+                >
+                  <div style="padding: 16px">
+                    <a
+                      href="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
+                      style="
                         background: #ffffff;
                         line-height: 0;
                         padding: 0 0;
                         text-align: center;
                         text-decoration: none;
                         width: 100%;
-                      " target="_blank">
-                    <div style="
+                      "
+                      target="_blank"
+                    >
+                      <div
+                        style="
                           display: flex;
                           flex-direction: row;
                           align-items: center;
-                        ">
-                      <div style="
+                        "
+                      >
+                        <div
+                          style="
                             background-color: #f4f4f4;
                             border-radius: 50%;
                             flex-grow: 0;
                             height: 40px;
                             margin-right: 14px;
                             width: 40px;
-                          "></div>
-                      <div style="
+                          "
+                        ></div>
+                        <div
+                          style="
                             display: flex;
                             flex-direction: column;
                             flex-grow: 1;
                             justify-content: center;
-                          ">
-                        <div style="
+                          "
+                        >
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               border-radius: 4px;
                               flex-grow: 0;
                               height: 14px;
                               margin-bottom: 6px;
                               width: 100px;
-                            "></div>
-                        <div style="
+                            "
+                          ></div>
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               border-radius: 4px;
                               flex-grow: 0;
                               height: 14px;
                               width: 60px;
-                            "></div>
+                            "
+                          ></div>
+                        </div>
                       </div>
-                    </div>
-                    <div style="padding: 19% 0"></div>
-                    <div style="
+                      <div style="padding: 19% 0"></div>
+                      <div
+                        style="
                           display: block;
                           height: 50px;
                           margin: 0 auto 12px;
                           width: 50px;
-                        ">
-                      <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
-                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <g transform="translate(-511.000000, -20.000000)" fill="#000000">
-                            <g>
-                              <path
-                                d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
-                              </path>
+                        "
+                      >
+                        <svg
+                          width="50px"
+                          height="50px"
+                          viewBox="0 0 60 60"
+                          version="1.1"
+                          xmlns="https://www.w3.org/2000/svg"
+                          xmlns:xlink="https://www.w3.org/1999/xlink"
+                        >
+                          <g
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                          >
+                            <g
+                              transform="translate(-511.000000, -20.000000)"
+                              fill="#000000"
+                            >
+                              <g>
+                                <path
+                                  d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"
+                                ></path>
+                              </g>
                             </g>
                           </g>
-                        </g>
-                      </svg>
-                    </div>
-                    <div style="padding-top: 8px">
-                      <div style="
+                        </svg>
+                      </div>
+                      <div style="padding-top: 8px">
+                        <div
+                          style="
                             color: #3897f0;
                             font-family: Arial, sans-serif;
                             font-size: 14px;
                             font-style: normal;
                             font-weight: 550;
                             line-height: 18px;
-                          ">
-                        View this profile on Instagram
+                          "
+                        >
+                          View this profile on Instagram
+                        </div>
                       </div>
-                    </div>
-                    <div style="padding: 12.5% 0"></div>
-                    <div style="
+                      <div style="padding: 12.5% 0"></div>
+                      <div
+                        style="
                           display: flex;
                           flex-direction: row;
                           margin-bottom: 14px;
                           align-items: center;
-                        ">
-                      <div>
-                        <div style="
+                        "
+                      >
+                        <div>
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               border-radius: 50%;
                               height: 12.5px;
                               width: 12.5px;
                               transform: translateX(0px) translateY(7px);
-                            "></div>
-                        <div style="
+                            "
+                          ></div>
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               height: 12.5px;
                               transform: rotate(-45deg) translateX(3px)
@@ -348,24 +421,30 @@
                               flex-grow: 0;
                               margin-right: 14px;
                               margin-left: 2px;
-                            "></div>
-                        <div style="
+                            "
+                          ></div>
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               border-radius: 50%;
                               height: 12.5px;
                               width: 12.5px;
                               transform: translateX(9px) translateY(-18px);
-                            "></div>
-                      </div>
-                      <div style="margin-left: 8px">
-                        <div style="
+                            "
+                          ></div>
+                        </div>
+                        <div style="margin-left: 8px">
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               border-radius: 50%;
                               flex-grow: 0;
                               height: 20px;
                               width: 20px;
-                            "></div>
-                        <div style="
+                            "
+                          ></div>
+                          <div
+                            style="
                               width: 0;
                               height: 0;
                               border-top: 2px solid transparent;
@@ -373,56 +452,70 @@
                               border-bottom: 2px solid transparent;
                               transform: translateX(16px) translateY(-4px)
                                 rotate(30deg);
-                            "></div>
-                      </div>
-                      <div style="margin-left: auto">
-                        <div style="
+                            "
+                          ></div>
+                        </div>
+                        <div style="margin-left: auto">
+                          <div
+                            style="
                               width: 0px;
                               border-top: 8px solid #f4f4f4;
                               border-right: 8px solid transparent;
                               transform: translateY(16px);
-                            "></div>
-                        <div style="
+                            "
+                          ></div>
+                          <div
+                            style="
                               background-color: #f4f4f4;
                               flex-grow: 0;
                               height: 12px;
                               width: 16px;
                               transform: translateY(-4px);
-                            "></div>
-                        <div style="
+                            "
+                          ></div>
+                          <div
+                            style="
                               width: 0;
                               height: 0;
                               border-top: 8px solid #f4f4f4;
                               border-left: 8px solid transparent;
                               transform: translateY(-4px) translateX(8px);
-                            "></div>
+                            "
+                          ></div>
+                        </div>
                       </div>
-                    </div>
-                    <div style="
+                      <div
+                        style="
                           display: flex;
                           flex-direction: column;
                           flex-grow: 1;
                           justify-content: center;
                           margin-bottom: 24px;
-                        ">
-                      <div style="
+                        "
+                      >
+                        <div
+                          style="
                             background-color: #f4f4f4;
                             border-radius: 4px;
                             flex-grow: 0;
                             height: 14px;
                             margin-bottom: 6px;
                             width: 224px;
-                          "></div>
-                      <div style="
+                          "
+                        ></div>
+                        <div
+                          style="
                             background-color: #f4f4f4;
                             border-radius: 4px;
                             flex-grow: 0;
                             height: 14px;
                             width: 144px;
-                          "></div>
-                    </div>
-                  </a>
-                  <p style="
+                          "
+                        ></div>
+                      </div>
+                    </a>
+                    <p
+                      style="
                         color: #c9c8cd;
                         font-family: Arial, sans-serif;
                         font-size: 14px;
@@ -434,86 +527,123 @@
                         text-align: center;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                      ">
-                    <a href="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
-                      style="
+                      "
+                    >
+                      <a
+                        href="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        style="
                           color: #c9c8cd;
                           font-family: Arial, sans-serif;
                           font-size: 14px;
                           font-style: normal;
                           font-weight: normal;
                           line-height: 17px;
-                        " target="_blank">Calum B</a>
-                    (@<a href="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
-                      style="
+                        "
+                        target="_blank"
+                        >Calum B</a
+                      >
+                      (@<a
+                        href="https://www.instagram.com/cal.takes.photos/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        style="
                           color: #c9c8cd;
                           font-family: Arial, sans-serif;
                           font-size: 14px;
                           font-style: normal;
                           font-weight: normal;
                           line-height: 17px;
-                        " target="_blank">cal.takes.photos</a>) • Instagram photos and videos
+                        "
+                        target="_blank"
+                        >cal.takes.photos</a
+                      >) • Instagram photos and videos
+                    </p>
+                  </div>
+                </blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+              </div>
+            </div>
+          </div>
+          <div class="page-section" id="music">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">music</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="row body-text">
+                <div class="col-xl-8" style="margin-bottom: 18px">
+                  <iframe
+                    style="border-radius: 12px"
+                    src="https://open.spotify.com/embed/artist/6vexkAscGsLMnF12MjyIjK?utm_source=generator"
+                    width="100%"
+                    height="352"
+                    frameborder="0"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <div class="col-xl-4">
+                  <p>
+                    I've been making music for about 7 years now, and after that
+                    long, I can proudly say I have three songs out at the time I
+                    wrote this. Am I the best singer or producer out there?
+                    Absolutely not. Is it bad? Perhaps. But am I having fun?
+                    Yes.
+                    <br /><br />
+                    Well, here it is.
+                    <br />
+                    My catalog.
+                    <br /><br /><br />
+                    Please enjoy!
                   </p>
                 </div>
-              </blockquote>
-              <script async src="//www.instagram.com/embed.js"></script>
-            </div>
-          </div>
-        </div>
-        <div class="page-section" id="music">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">music</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="row body-text">
-              <div class="col-xl-8" style="margin-bottom: 18px">
-                <iframe style="border-radius: 12px"
-                  src="https://open.spotify.com/embed/artist/6vexkAscGsLMnF12MjyIjK?utm_source=generator" width="100%"
-                  height="352" frameborder="0" allowfullscreen=""
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"></iframe>
-              </div>
-              <div class="col-xl-4">
-                <p>
-                  I've been making music for about 5 years now, and after that
-                  long, I can proudly say I have three songs out at the time I
-                  wrote this. Am I the best singer or producer out there?
-                  Absolutely not. Is it bad? Perhaps. But am I having fun?
-                  Yes.
-                  <br /><br />
-                  Well, here it is.
-                  <br /><br />
-                  My catalog.
-                  <br /><br />
-                  Please enjoy!
-                </p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="page-section" id="contact">
-          <div class="page-section-title-wrapper container-fluid">
-            <h2 class="page-section-title">& more</h2>
-          </div>
-          <div class="container-fluid main-content">
-            <div class="body-text row">
-              <div class="col-lg-4" style="margin-bottom: 25px; min-width: 200px">
-                <h3>contact</h3>
-                <span><a href="mailto:cal@calumboone.com" target="_blank">cal@calumboone.com</a></span><br />
-                <span><a href="http://www.linkedin.com/in/calum-boone/"
-                    target="_blank">linkedin.com/in/calum-boone/</a></span>
-                <div class="social-wrapper">
-                  <div class="social-icon-wrapper menu-item" id="linkedin">
-                    <a href="https://www.linkedin.com/in/calum-boone/" target="_blank" class="fa fa-linkedin"></a>
-                  </div>
-                  <div class="social-icon-wrapper menu-item" id="spotify">
-                    <a href="https://open.spotify.com/artist/6vexkAscGsLMnF12MjyIjK?si=Cv4MGb7RT2a-gFUlucfg2A"
-                      target="_blank" class="fa fa-spotify"></a>
-                  </div>
-                  <div class="social-icon-wrapper menu-item" id="instagram">
-                    <a href="https://www.instagram.com/cal.bbbbbbbb/" target="_blank" class="fa fa-instagram"></a>
-                  </div>
-                  <!-- twitter is a maybe
+          <div class="page-section" id="contact">
+            <div class="page-section-title-wrapper container-fluid">
+              <h2 class="page-section-title">& more</h2>
+            </div>
+            <div class="container-fluid main-content">
+              <div class="body-text row">
+                <div
+                  class="col-lg-4"
+                  style="margin-bottom: 25px; min-width: 200px"
+                >
+                  <h3>contact</h3>
+                  <span
+                    ><a href="mailto:cal@calumboone.com" target="_blank"
+                      >cal@calumboone.com</a
+                    ></span
+                  ><br />
+                  <span
+                    ><a
+                      href="http://www.linkedin.com/in/calum-boone/"
+                      target="_blank"
+                      >linkedin.com/in/calum-boone/</a
+                    ></span
+                  >
+                  <div class="social-wrapper">
+                    <div class="social-icon-wrapper menu-item" id="linkedin">
+                      <a
+                        href="https://www.linkedin.com/in/calum-boone/"
+                        target="_blank"
+                        class="fa fa-linkedin"
+                      ></a>
+                    </div>
+                    <div class="social-icon-wrapper menu-item" id="spotify">
+                      <a
+                        href="https://open.spotify.com/artist/6vexkAscGsLMnF12MjyIjK?si=Cv4MGb7RT2a-gFUlucfg2A"
+                        target="_blank"
+                        class="fa fa-spotify"
+                      ></a>
+                    </div>
+                    <div class="social-icon-wrapper menu-item" id="instagram">
+                      <a
+                        href="https://www.instagram.com/cal.bbbbbbbb/"
+                        target="_blank"
+                        class="fa fa-instagram"
+                      ></a>
+                    </div>
+                    <!-- twitter is a maybe
                       <div class="social-icon-wrapper menu-item" id="twitter">
                         <a
                           href="https://twitter.com/CalumBoone"
@@ -522,44 +652,51 @@
                         ></a>
                       </div>
                       -->
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <span class="body-text">Congrats on reading through to the bottom of the page!
-                  Unless you clicked one of the tl;dr links. Then congrats
-                  on... making it here faster? <br /><br />
-                  Either way, here's a prize for your efforts.</span>
-                <br /><br />
-                <button onclick="downloadResume()" class="body-button" id="download-resume" title="Download Resume">
-                  <div class="download-resume-text">
-                    <span>Download Resume</span>
                   </div>
-                </button>
-                <br /><br />
-                <span class="body-text">Or feel free to check out my
-                  <a href="/about/">about page</a>.</span>
+                </div>
+                <div class="col-lg-4">
+                  <span class="body-text"
+                    >Congrats on reading through to the bottom of the page!
+                    Unless you clicked one of the tl;dr links. Then congrats on
+                    making it here faster!</span
+                  >
+                  <br /><br />
+                  <button
+                    onclick="downloadResume()"
+                    class="body-button"
+                    id="download-resume"
+                    title="Download Resume"
+                  >
+                    <div class="download-resume-text">
+                      <span>Download Resume</span>
+                    </div>
+                  </button>
+                  <br /><br />
+                  <span class="body-text"
+                    >Or feel free to check out my
+                    <a href="/about/">about page</a>.</span
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </main>
-  </div>
-  <div class="footer">
-    Made from scratch with love. &copy; Calum Boone 2023
-  </div>
+      </main>
+    </div>
+    <div class="footer">
+      Made from scratch with love. &copy; Calum Boone 2023
+    </div>
 
-  <!-- some javascript... -->
-  <script src="https://d3js.org/d3.v7.min.js "></script>
-  <!-- content -->
-  <script src="/js/nav.js"></script>
-  <script src="/js/homepage-cards.js"></script>
-  <script src="/js/skillsCards.js"></script>
+    <!-- some javascript... -->
+    <script src="https://d3js.org/d3.v7.min.js "></script>
+    <!-- content -->
+    <script src="/js/nav.js"></script>
+    <script src="/js/homepage-cards.js"></script>
+    <script src="/js/skillsCards.js"></script>
 
-  <!-- utilities -->
-  <script src="/js/dm-toggle.js"></script>
-  <script src="/js/btt-button.js"></script>
-  <script src="/js/resume-download.js"></script>
-</body>
-
+    <!-- utilities -->
+    <script src="/js/dm-toggle.js"></script>
+    <script src="/js/btt-button.js"></script>
+    <script src="/js/resume-download.js"></script>
+  </body>
 </html>

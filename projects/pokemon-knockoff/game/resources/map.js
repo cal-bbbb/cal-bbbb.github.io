@@ -276,6 +276,8 @@ d3.select("#username").on("input", function() {
 document.addEventListener("keydown", (e) => {
     ldir = dir;
     if (e.code === "ArrowUp") {
+        e.preventDefault();
+
         if (dir != "north") {
             dir = "north";
         } else {
@@ -292,6 +294,8 @@ document.addEventListener("keydown", (e) => {
         }
     }
     if (e.code === "ArrowDown") {
+        e.preventDefault();
+
         if (ldir != "south") {
             dir = "south";
         } else {
